@@ -8,7 +8,7 @@ module.exports = generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the gnarly ' + chalk.red('Wbp') + ' generator!'
+      'Welcome to the ' + chalk.red('wbp') + ' generator!'
     ));
 
     var prompts = [{
