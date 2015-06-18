@@ -20,11 +20,12 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.19.0",
     "chalk": "^1.0.0",
+    "yeoman-generator": "^0.20.1",
     "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "yeoman-assert": "^2.0.0"
   }
 }
