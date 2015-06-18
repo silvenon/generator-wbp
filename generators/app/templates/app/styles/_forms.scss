@@ -1,0 +1,11 @@
+.form {
+  &-control {
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(#000, 0.25);
+
+    &:focus {
+      border: 1px solid color(primary);
+    }
+  }
+}

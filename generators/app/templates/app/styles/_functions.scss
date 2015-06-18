@@ -1,0 +1,20 @@
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+@function bc($key) {
+  @return map-get($bc, $key);
+}
+
+// http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+@function z($element) {
+  @return index($elements, $element);
+}
+
+@function tint($color, $amount) {
+  @return scale-color($color, $lightness: $amount);
+}
+
+@function shade($color, $amount) {
+  @return scale-color($color, $lightness: -$amount);
+}

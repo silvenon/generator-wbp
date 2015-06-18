@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>My Web App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/styles/app.css">
+    <style>
+      .container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon-heart {
+        display: block;
+        width: 200px;
+        height: 200px;
+        color: #E02D2D;
+      }
+    </style>
+  </head>
+  <body>
+<% if (!includeReact) { -%>
+    <div class="container">
+      <svg class="icon icon-heart" role="presentation">
+        <use xlink:href="/images/icons.svg#heart" />
+      </svg>
+    </div>
+<% } -%>
+    <script src="/scripts/bundle.js"></script>
+  </body>
+</html>

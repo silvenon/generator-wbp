@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "babel": "^5.5.8",
+    "jsonlint": "^1.6.2",
     "mocha": "*",
     "yeoman-assert": "^2.0.0"
   }

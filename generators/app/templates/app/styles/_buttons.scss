@@ -1,0 +1,24 @@
+.btn {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem 2rem;
+  border: 0;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  @each $type, $color in $colors {
+    &-#{$type} {
+      background: $color;
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        background: shade($color, 15%);
+        color: #fff;
+      }
+    }
+  }
+}
