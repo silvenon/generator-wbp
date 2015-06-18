@@ -1,7 +1,7 @@
 {
   "name": "generator-wbp",
   "version": "0.0.0",
-  "description": "Yeoman generator",
+  "description": "Provides a modern workflow for developing web apps and sites",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "silvenon/generator-wbp",
