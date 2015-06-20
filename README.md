@@ -30,6 +30,8 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [Mocha] as the test framework
   * [WebdriverIO] as Node.js bindings for Selenium ([more info][integration-testing] about the setup)
 
+See the current [roadmap].
+
 ## Getting Started
 
 Install [yo] and this generator globally:
@@ -125,6 +127,7 @@ MIT © Matija Marohnić
 [svg-symbol]: https://css-tricks.com/svg-symbol-good-choice-icons/
 [svg4everybody]: https://github.com/jonathantneal/svg4everybody
 [integration-testing]: http://twin.github.io/selenium-testing-workflow-with-webdriverio/
+[roadmap]: labels/enhancement
 [yo]: https://github.com/yeoman/yo
 [package.json]: generators/app/templates/_package.json
 [scripts]: https://docs.npmjs.com/files/package.json#scripts
