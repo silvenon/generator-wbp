@@ -1,4 +1,4 @@
-# generator-wbp
+# generator-wbp [![Travis CI](https://travis-ci.org/silvenon/generator-wbp.svg)](https://travis-ci.org/silvenon/generator-wbp)
 
 > A [Yeoman] generator which provides a modern workflow for developing web apps and sites.
 
