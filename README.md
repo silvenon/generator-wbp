@@ -127,7 +127,7 @@ MIT © Matija Marohnić
 [svg-symbol]: https://css-tricks.com/svg-symbol-good-choice-icons/
 [svg4everybody]: https://github.com/jonathantneal/svg4everybody
 [integration-testing]: http://twin.github.io/selenium-testing-workflow-with-webdriverio/
-[roadmap]: labels/enhancement
+[roadmap]: https://github.com/silvenon/generator-wbp/labels/enhancement
 [yo]: https://github.com/yeoman/yo
 [package.json]: generators/app/templates/_package.json
 [scripts]: https://docs.npmjs.com/files/package.json#scripts
