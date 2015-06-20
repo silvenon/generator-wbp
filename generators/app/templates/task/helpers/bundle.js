@@ -22,7 +22,7 @@ if (process.env.GULP_ENV === 'development') {
   b = watchify(b);
 }
 
-const bundle = () => {
+export default function bundle() {
   return b.bundle()
     .on('error', function (msg) {
       delete msg.stream; // delete the annoying stack trace
@@ -38,5 +38,3 @@ const bundle = () => {
 
 b.on('update', bundle);
 b.on('log', $.util.log);
-
-module.exports = bundle;

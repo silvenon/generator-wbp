@@ -4,7 +4,7 @@ import browserSync from 'browser-sync';
 
 const $ = gulpLoadPlugins();
 
-module.exports = (files) => {
+export default function (files) {
   return () => {
     return gulp.src(files)
       .pipe(browserSync.stream({once: true}))
