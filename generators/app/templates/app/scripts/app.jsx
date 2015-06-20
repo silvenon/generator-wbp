@@ -1,9 +1,8 @@
 import React from 'react';
 import Router from 'react-router';
-
+import fetch from './helpers/fetch';
 import Icon from './components/icon';
 
-import 'es6-promise';
 import 'svg4everybody';
 import './fonts';
 
@@ -16,6 +15,12 @@ const {
 } = Router;
 
 const App = React.createClass({
+  componentDidMount() {
+    fetch('/index.html').then((res) => {
+      console.log('Fetch API call successful!');
+    });
+  },
+
   render() {
     return (
       <div className="container">
