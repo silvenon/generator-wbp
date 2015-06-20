@@ -8,7 +8,7 @@ describe('react', () => {
       helpers.run(path.join(__dirname, '../generators/app'))
         .withOptions({skipInstall: true})
         .withPrompts({
-          features: ['includeReact']
+          includeReact: true
         })
         .on('end', done);
     });
@@ -34,6 +34,9 @@ describe('react', () => {
     before((done) => {
       helpers.run(path.join(__dirname, '../generators/app'))
         .withOptions({skipInstall: true})
+        .withPrompts({
+          includeReact: false
+        })
         .on('end', done);
     });
 
