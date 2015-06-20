@@ -8,12 +8,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/styles/app.css">
+
+    <!-- load the web font asynchronously with Web Font Loader -->
+    <!-- https://github.com/typekit/webfontloader -->
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Open+Sans:400italic,400,300,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+
+    <!-- demo styles, feel free to delete -->
     <style>
       .container {
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+      }
+
+      h1 {
+        font-weight: 300;
+        font-size: 2.5em;
       }
 
       .icon-heart {
@@ -27,6 +52,7 @@
   <body>
 <% if (!includeReact) { -%>
     <div class="container">
+      <h1>You look <strong>great</strong> today!</h1>
       <svg class="icon icon-heart" role="presentation">
         <use xlink:href="/images/icons.svg#heart" />
       </svg>

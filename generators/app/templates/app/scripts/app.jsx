@@ -24,6 +24,7 @@ const App = React.createClass({
   render() {
     return (
       <div className="container">
+        <h1>You look <strong>great</strong> today!</h1>
         <Icon symbol="heart" role="presentation" />
         <RouteHandler />
       </div>

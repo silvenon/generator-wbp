@@ -7,10 +7,8 @@ import 'fontfaceobserver';
 // http://www.filamentgroup.com/lab/font-events.html
 
 // don't use if you're not loading any web fonts
-new FontFaceObserver('sans-serif')
+new FontFaceObserver('Open Sans')
   .check()
   .then(function () {
-    // class name inspired by the wf-active class given by Web Font Loader
-    // https://github.com/typekit/webfontloader
-    document.documentElement.classList.add('wf-actually-active');
+    console.log('Open Sans loaded!');
   });
