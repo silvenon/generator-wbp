@@ -14,7 +14,13 @@ I'm open for convincing to move to an alternative, like [webpack], I just haven'
 
 ## React
 
-I chose React among other frameworks because it's simple, modern, and unobtrusive, which means that it can be combined with other frameworks. It worked great for me so far and is the only one for which I can say that I kinda-sorta mastered.
+I chose React among other frameworks because it's:
+
+  * simple to understand and use
+  * unobtrusive, i.e. can be combined with other frameworks (if you're into that)
+  * easy to start with, Babel has built-in JSX support
+
+It worked great for me so far and is the only one for which I can say that I kinda-sorta mastered.
 
 I made it optional because there is a good chance you'll want something else, and removing it manually each time isn't trivial.
 
