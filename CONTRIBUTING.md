@@ -10,7 +10,7 @@ I want to make this generator a collection of best practices and I will do my be
 
 I used to use [Bower] + [wiredep] (like we do in [generator-gulp-webapp]), but Browserify offers Node-like `require()`, which improves authoring experience and frees you of worrying about the source order. Also, it consumes npm packages, which we're using for development anyway, so that's one less package manager to worry about.
 
-I'm open for convincing to move to an alternative, like [webpack], I just haven't tried it for real yet, because the learning curve seemed steeper.
+I'm open for convincing to move to an alternative (see #2), like [jspm] or [webpack], I just haven't tried it for real yet, because the learning curve seemed steeper.
 
 ## React
 
@@ -58,6 +58,7 @@ I'm open for convincing to move to [wd]. It seems to have a very similar goal, b
 [bower]: http://bower.io/
 [wiredep]: https://github.com/taptapship/wiredep
 [generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
+[jspm]: http://jspm.io/
 [webpack]: http://webpack.github.io/
 [libsass]: http://libsass.org/
 [autoprefixer]: https://github.com/postcss/autoprefixer
