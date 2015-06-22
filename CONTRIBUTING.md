@@ -6,6 +6,12 @@ I created this generator for myself and my purposes, which means that I'll be ma
 
 I want to make this generator a collection of best practices and I will do my best to document here why I made certain choices.
 
+## Bootstrap
+
+I think [Bootstrap] is great, it's very well-coded, works great accross browsers, has a strong community and, unlike many other frameworks, encourages accessibility and has it built-in!
+
+The reason why I chose **not** to include it is because everyone has their own UI preferences and it's very likely Bootstrap will not handle something the way you want, which is limiting and annoying. I think Bootstrap is an excellent learning resource, but not really a good idea to use it directly in projects where you need advanced UI control.
+
 ## Browserify
 
 I used to use [Bower] + [wiredep] (like we do in [generator-gulp-webapp]), but Browserify offers Node-like `require()`, which improves authoring experience and frees you of worrying about the source order. Also, it consumes npm packages, which we're using for development anyway, so that's one less package manager to worry about.
@@ -55,6 +61,7 @@ It's more advanced, has nicer API and is better-documented than [WebdriverJS].
 
 I'm open for convincing to move to [wd]. It seems to have a very similar goal, but with a different API. I haven't tried it for real yet.
 
+[bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
 [wiredep]: https://github.com/taptapship/wiredep
 [generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
