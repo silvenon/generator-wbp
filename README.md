@@ -53,9 +53,16 @@ and run the generator to start scaffolding:
 ❯ yo wbp
 ```
 
-## Commands
+## Scripts
 
-There are some shortcut scripts in the [package.json] that you can run [using npm][scripts]. I'm not entirely sure that it's ok to use them that way, but you're not going to be publishing the generated "package" (which is why `private` is set to `true`), so we might as well abuse those.
+There are some shortcut scripts in the [package.json] that you can run [using npm][scripts]. There are a couple of benefits to this:
+
+  * it's usually shorter to type
+  * if I happen to switch to another task runner, the npm scripts will stay the same
+  * when run like this, the `gulp` command actually uses the local gulp, so we don't have to worry about local and global versions matching or even installing it globally
+  * we don't have to create a gulp task for other shell commands, like deployment in our case
+
+**Side note**: I'm not entirely sure that it's ok to use npm scripts this way, but we're not going to be publishing the generated "package" (which is why `private` is set to `true`), so we might as well abuse them.
 
 Start the local server at http://localhost:9000 and watch files for changes:
 
