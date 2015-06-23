@@ -33,29 +33,33 @@ module.exports = generators.Base.extend({
   writing: {
     tasks: function () {
       [
-        'task/helpers/bundle.js',
-        'task/helpers/lint.js',
-        'task/scripts.js',
-        'task/styles.js',
-        'task/images.js',
-        'task/dev.js',
-        'task/test.js',
-        'task/prod.js',
-        'gulpfile.babel.js'
+        'helpers/bundle.js',
+        'helpers/lint.js',
+        'scripts.js',
+        'styles.js',
+        'images.js',
+        'dev.js',
+        'test.js',
+        'prod.js'
       ].forEach(function (filePath) {
         this.fs.copyTpl(
-          this.templatePath(filePath),
-          this.destinationPath(filePath),
+          this.templatePath('task/' + filePath),
+          this.destinationPath('task/' + filePath),
           {
             includeReact: this.props.includeReact
           }
         );
       }.bind(this));
+
+      this.fs.copy(
+        this.templatePath('gulpfile.babel.js'),
+        this.destinationPath('gulpfile.babel.js')
+      );
     },
 
     markup: function () {
       this.fs.copyTpl(
-        this.templatePath('app/index.html'),
+        this.templatePath('index.html'),
         this.destinationPath('app/index.html'),
         {
           includeReact: this.props.includeReact
@@ -64,62 +68,56 @@ module.exports = generators.Base.extend({
     },
 
     scripts: function () {
-      var ext = this.props.includeReact ? '.jsx' : '.js';
-
       [
-        'app/scripts/vendor/svg4everybody.js',
-        'app/scripts/helpers/fetch.js',
-        'app/scripts/fonts.js'
+        'vendor/svg4everybody.js',
+        'helpers/fetch.js',
+        'fonts.js'
       ].forEach(function (file) {
         this.fs.copy(
-          this.templatePath(file),
-          this.destinationPath(file)
+          this.templatePath('scripts/' + file),
+          this.destinationPath('app/scripts/' + file)
         );
       }.bind(this));
 
       if (this.props.includeReact) {
         [
-          'app/scripts/components/icon.jsx',
-          'app/scripts/app.jsx'
+          'components/icon.jsx',
+          'app.jsx'
         ].forEach(function (file) {
           this.fs.copy(
-            this.templatePath(file),
-            this.destinationPath(file)
+            this.templatePath('scripts/' + file),
+            this.destinationPath('app/scripts/' + file)
           );
         }.bind(this));
       } else {
-        [
-          'app/scripts/app.js'
-        ].forEach(function (file) {
-          this.fs.copy(
-            this.templatePath(file),
-            this.destinationPath(file)
-          );
-        }.bind(this));
+        this.fs.copy(
+          this.templatePath('scripts/app.js'),
+          this.destinationPath('app/scripts/app.js')
+        );
       }
     },
 
     styles: function () {
       [
-        'app/styles/_variables.scss',
-        'app/styles/_functions.scss',
-        'app/styles/_mixins.scss',
-        'app/styles/vendor/_normalize.scss',
-        'app/styles/_base.scss',
-        'app/styles/_buttons.scss',
-        'app/styles/_forms.scss',
-        'app/styles/sections/_intro.scss',
-        'app/styles/_sections.scss',
-        'app/styles/_utilities.scss'
+        '_variables.scss',
+        '_functions.scss',
+        '_mixins.scss',
+        'vendor/_normalize.scss',
+        '_base.scss',
+        '_buttons.scss',
+        '_forms.scss',
+        'sections/_intro.scss',
+        '_sections.scss',
+        '_utilities.scss'
       ].forEach(function (file) {
         this.fs.copy(
-          this.templatePath(file),
-          this.destinationPath(file)
+          this.templatePath('styles/' + file),
+          this.destinationPath('app/styles/' + file)
         );
       }.bind(this));
 
       this.fs.copyTpl(
-        this.templatePath('app/styles/app.scss'),
+        this.templatePath('styles/app.scss'),
         this.destinationPath('app/styles/app.scss'),
         {
           includeReact: this.props.includeReact
@@ -129,7 +127,7 @@ module.exports = generators.Base.extend({
 
     svg: function () {
       this.fs.copy(
-        this.templatePath('app/images/icons.svg'),
+        this.templatePath('images/icons.svg'),
         this.destinationPath('app/images/icons.svg')
       );
     },
@@ -146,25 +144,25 @@ module.exports = generators.Base.extend({
 
     test: function () {
       [
-        'test/client.js',
-        'test/fixtures/index.html',
-        'test/spec/test.js'
+        'client.js',
+        'fixtures/index.html',
+        'spec/test.js'
       ].forEach(function (file) {
         this.fs.copy(
-          this.templatePath(file),
-          this.destinationPath(file)
+          this.templatePath('test/' + file),
+          this.destinationPath('test/' + file)
         );
       }.bind(this));
     },
 
     icons: function () {
       [
-        'app/favicon.ico',
-        'app/apple-touch-icon.png'
+        'favicon.ico',
+        'apple-touch-icon.png'
       ].forEach(function (file) {
         this.fs.copy(
           this.templatePath(file),
-          this.destinationPath(file)
+          this.destinationPath('app/' + file)
         );
       }.bind(this));
     },
@@ -172,12 +170,12 @@ module.exports = generators.Base.extend({
     loaders: function () {
       if (this.props.includeReact) {
         this.fs.copy(
-          this.templatePath('app/styles/vendor/_loaders.scss'),
+          this.templatePath('styles/vendor/_loaders.scss'),
           this.destinationPath('app/styles/vendor/_loaders.scss')
         );
 
         this.fs.copy(
-          this.templatePath('app/scripts/components/loader.jsx'),
+          this.templatePath('scripts/components/loader.jsx'),
           this.destinationPath('app/scripts/components/loader.jsx')
         );
       }
