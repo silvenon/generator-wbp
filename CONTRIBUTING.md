@@ -42,15 +42,16 @@ Because I'm using [gulp-postcss] and not [gulp-autoprefixer] directly, you are f
 
 ## SVG
 
-I find SVG a much better choice for icons over icon fonts.
+I find SVG a much better choice for icons over icon fonts. [This post][svg-vs-font] by Chris Coyier explains it very well, but basically:
 
   * much smaller file size
   * more semantic
   * better accessibility
+  * no anti-aliasing issues
   * no spacing issues
   * multiple colors
-  * opacity property
-  * stroke property
+  * more styling control
+  * advanced animation capabilities
   * etc.
 
 The method that worked best for me is `<symbol>` + `<use>`, read more about it [here][svg-symbol].
@@ -73,6 +74,7 @@ I'm open for convincing to move to [wd]. It seems to have a very similar goal, b
 [gulp-postcss]: https://github.com/postcss/gulp-postcss
 [gulp-autoprefixer]: https://github.com/sindresorhus/gulp-autoprefixer
 [postcss plugins]: https://github.com/postcss/postcss#plugins
+[svg-vs-font]: https://css-tricks.com/icon-fonts-vs-svg/
 [svg-symbol]: https://css-tricks.com/svg-symbol-good-choice-icons/
 [webdriverjs]: https://code.google.com/p/selenium/wiki/WebDriverJs
 [wd]: https://github.com/admc/wd
