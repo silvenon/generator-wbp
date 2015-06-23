@@ -4,7 +4,18 @@ Go crazy with suggestions and requests, I'm listening.
 
 I created this generator for myself and my purposes, which means that I'll be maintaining it regularly (until something better comes along). This also means that I will reject requests that are not really my style (sorry), but you can be sure that I'll consider them carefully.
 
-I want to make this generator a collection of best practices and I will do my best to document here why I made certain choices.
+I want to make this generator a collection of best practices and I will do my best to document why I made certain choices.
+
+## gulp
+
+In comparison to [Grunt], gulp:
+
+  * is faster
+  * requires less code
+  * is easier to read
+  * doesn't always require plugins ([1st guideline])
+
+There are other interesting tools rising, like [Broccoli], but I'm not sure if any of them are mature enough, so for now I'm sticking to gulp.
 
 ## Bootstrap
 
@@ -62,6 +73,9 @@ It's more advanced, has nicer API and is better-documented than [WebdriverJS].
 
 I'm open for convincing to move to [wd]. It seems to have a very similar goal, but with a different API. I haven't tried it for real yet.
 
+[grunt]: http://gruntjs.com/
+[1st guideline]: https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md#guidelines
+[broccoli]: https://github.com/broccolijs/broccoli
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
 [wiredep]: https://github.com/taptapship/wiredep
