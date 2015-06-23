@@ -41,6 +41,10 @@ It worked great for me so far and is the only one for which I can say that I kin
 
 I made it optional because there is a good chance you'll want something else, and removing it manually each time isn't trivial.
 
+### ES2015 Classes
+
+Currently using ES2015 classes with React doesn't really offer any advantages, only limitations -- we are unable to use mixins, we have to bind `this` to every custom method etc. That's why I'm using React's `#createClass` method instead.
+
 ## [Sass]
 
 I'm aware that other CSS pre-processors exist, but Sass has the strongest community and is blazing fast, now that [libsass] is a thing.
