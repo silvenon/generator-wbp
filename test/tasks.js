@@ -7,9 +7,7 @@ describe('gulp tasks', () => {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withOptions({skipInstall: true})
       .withPrompts({
-        features: [
-          'includeReact'
-        ]
+        includeReact: true
       })
       .on('end', done);
   });

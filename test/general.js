@@ -9,10 +9,7 @@ describe('general', () => {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withOptions({skipInstall: true})
       .withPrompts({
-        features: [
-          'includeReact',
-          'includeFetch'
-        ]
+        includeReact: true
       })
       .on('end', done);
   });
