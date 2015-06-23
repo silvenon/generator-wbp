@@ -2,6 +2,7 @@ import React from 'react';
 import Router from 'react-router';
 import fetch from './helpers/fetch';
 import Icon from './components/icon';
+import Loader from './components/loader';
 
 import 'svg4everybody';
 import './fonts';
@@ -15,20 +16,48 @@ const {
 } = Router;
 
 const App = React.createClass({
+  getInitialState() {
+    return {
+      loading: false
+    };
+  },
+
   componentDidMount() {
+    this.setState({
+      loading: true
+    });
+
     fetch('/index.html').then((res) => {
-      console.log('Fetch API call successful!');
+      // a little artificial delay never hurt anyone
+      setTimeout(() => {
+        console.log('Fetch API call successful!');
+        this.setState({
+          loading: false
+        });
+      }, 3000);
     });
   },
 
   render() {
-    return (
-      <div className="container">
-        <h1>You look <strong>great</strong> today!</h1>
-        <Icon symbol="heart" role="presentation" />
-        <RouteHandler />
-      </div>
-    );
+    let content;
+
+    if (this.state.loading) {
+      content = (
+        <div className="container">
+          <Loader loading={this.state.loading} />
+        </div>
+      );
+    } else {
+      content = (
+        <div className="container">
+          <h1>You look <strong>great</strong> today!</h1>
+          <Icon symbol="heart" role="presentation" />
+          <RouteHandler />
+        </div>
+      );
+    }
+
+    return content;
   }
 });
 

@@ -3,6 +3,9 @@
 @import 'mixins';
 
 @import 'vendor/normalize';
+<% if (includeReact) { -%>
+@import 'vendor/loaders';
+<% } -%>
 
 @import 'base';
 

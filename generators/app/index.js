@@ -110,14 +110,21 @@ module.exports = generators.Base.extend({
         'app/styles/_forms.scss',
         'app/styles/sections/_intro.scss',
         'app/styles/_sections.scss',
-        'app/styles/_utilities.scss',
-        'app/styles/app.scss'
+        'app/styles/_utilities.scss'
       ].forEach(function (file) {
         this.fs.copy(
           this.templatePath(file),
           this.destinationPath(file)
         );
       }.bind(this));
+
+      this.fs.copyTpl(
+        this.templatePath('app/styles/app.scss'),
+        this.destinationPath('app/styles/app.scss'),
+        {
+          includeReact: this.props.includeReact
+        }
+      );
     },
 
     svg: function () {
@@ -160,6 +167,20 @@ module.exports = generators.Base.extend({
           this.destinationPath(file)
         );
       }.bind(this));
+    },
+
+    loaders: function () {
+      if (this.props.includeReact) {
+        this.fs.copy(
+          this.templatePath('app/styles/vendor/_loaders.scss'),
+          this.destinationPath('app/styles/vendor/_loaders.scss')
+        );
+
+        this.fs.copy(
+          this.templatePath('app/scripts/components/loader.jsx'),
+          this.destinationPath('app/scripts/components/loader.jsx')
+        );
+      }
     },
 
     dotfiles: function () {
