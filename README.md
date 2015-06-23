@@ -26,6 +26,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [Normalize.css] for normalizing styles across browsers
   * [imagemin] for image optimization
   * [SVG][svg-symbol] for icons (`<symbol>` + `<use>`) + [polyfill][svg4everybody] for IE
+  * [CSS loader] component for React
   * [selenium-standalone] for installing drivers and running the Selenium server
   * [Mocha] as the test framework
   * [WebdriverIO] as Node.js bindings for Selenium ([more info][integration-testing] about the setup)
@@ -128,11 +129,12 @@ MIT © Matija Marohnić
 [sourcemaps]: http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
 [normalize.css]: http://necolas.github.io/normalize.css/
 [imagemin]: https://github.com/imagemin/imagemin
+[svg-symbol]: https://css-tricks.com/svg-symbol-good-choice-icons/
+[svg4everybody]: https://github.com/jonathantneal/svg4everybody
+[css loader]: http://connoratherton.com/loaders
 [selenium-standalone]: https://github.com/vvo/selenium-standalone
 [mocha]: http://mochajs.org/
 [webdriverio]: http://webdriver.io/
-[svg-symbol]: https://css-tricks.com/svg-symbol-good-choice-icons/
-[svg4everybody]: https://github.com/jonathantneal/svg4everybody
 [integration-testing]: http://twin.github.io/selenium-testing-workflow-with-webdriverio/
 [roadmap]: https://github.com/silvenon/generator-wbp/labels/enhancement
 [yo]: https://github.com/yeoman/yo
