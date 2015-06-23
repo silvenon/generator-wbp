@@ -22,7 +22,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [PostCSS] for CSS post-processing, with the following plugins:
     - [Autoprefixer] for adding vendor prefixes
     - easily include more [PostCSS plugins]
-  * [gulp-sourcemaps] for CSS and JS sourcemaps
+  * JS & CSS [sourcemaps]
   * [Normalize.css] for normalizing styles across browsers
   * [imagemin] for image optimization
   * [SVG][svg-symbol] for icons (`<symbol>` + `<use>`) + [polyfill][svg4everybody] for IE
@@ -125,7 +125,7 @@ MIT © Matija Marohnić
 [postcss]: https://github.com/postcss/postcss
 [autoprefixer]: https://github.com/postcss/autoprefixer
 [postcss plugins]: https://github.com/postcss/postcss#plugins
-[gulp-sourcemaps]: https://github.com/floridoo/gulp-sourcemaps
+[sourcemaps]: http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
 [normalize.css]: http://necolas.github.io/normalize.css/
 [imagemin]: https://github.com/imagemin/imagemin
 [selenium-standalone]: https://github.com/vvo/selenium-standalone
