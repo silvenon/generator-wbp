@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/styles/app.css">
   </head>
   <body>
-    <!-- content -->
+<% if (includeReact) { -%>
+    <div id="content"></div>
+<% } -%>
     <script src="/scripts/bundle.js"></script>
   </body>
 </html>

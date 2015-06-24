@@ -68,7 +68,7 @@ const routes = (
 );
 
 Router.run(routes, (Handler) => {
-  React.render(<Handler />, document.body);
+  React.render(<Handler />, document.getElementById('content'));
 });
 
 console.log('Hello World from React!');

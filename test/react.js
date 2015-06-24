@@ -28,6 +28,10 @@ describe('react', () => {
     it('sets the correct Browserify entry', () => {
       assert.fileContent('task/helpers/bundle.js', "'./app/scripts/app.jsx'");
     });
+
+    it('adds correct HTML', () => {
+      assert.fileContent('app/index.html', 'id="content"');
+    });
   });
 
   describe('off', () => {
@@ -52,6 +56,10 @@ describe('react', () => {
 
     it('sets the correct Browserify entry', () => {
       assert.fileContent('task/helpers/bundle.js', "'./app/scripts/app.js'");
+    });
+
+    it('adds correct HTML', () => {
+      assert.fileContent('app/index.html', 'class="container"');
     });
   });
 });
