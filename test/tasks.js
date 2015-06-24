@@ -1,3 +1,5 @@
+/* eslint quotes: [0] */
+
 import path from 'path';
 import {test as helpers} from 'yeoman-generator';
 import assert from 'yeoman-assert';
@@ -14,24 +16,22 @@ describe('gulp tasks', () => {
 
   it('creates expected files', () => {
     assert.file([
-      'task/helpers/bundle.js',
-      'task/helpers/lint.js',
       'task/styles.js',
-      'task/scripts.js',
+      'task/lint.js',
       'task/images.js',
       'task/dev.js',
       'task/test.js',
       'task/prod.js'
-    ])
-  });
-
-  it('contains script tasks', () => {
-    assert.fileContent('task/scripts.js', "gulp.task('scripts'");
-    assert.fileContent('task/scripts.js', "gulp.task('lint'");
+    ]);
   });
 
   it('contains style tasks', () => {
     assert.fileContent('task/styles.js', "gulp.task('styles'");
+  });
+
+  it('contains lint tasks', () => {
+    assert.fileContent('task/lint.js', "gulp.task('lint'");
+    assert.fileContent('task/lint.js', "gulp.task('lint:test'");
   });
 
   it('contains image tasks', () => {
@@ -45,7 +45,6 @@ describe('gulp tasks', () => {
   });
 
   it('contains testing tasks', () => {
-    assert.fileContent('task/test.js', "gulp.task('lint:test'");
     assert.noFileContent('task/test.js', "gulp.task('connect:test'");
     assert.noFileContent('task/test.js', "gulp.task('watch:test'");
     assert.fileContent('task/test.js', "gulp.task('serve:test'");

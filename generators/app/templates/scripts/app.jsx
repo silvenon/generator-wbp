@@ -1,11 +1,11 @@
 import React from 'react';
 import Router from 'react-router';
-import fetch from './helpers/fetch';
+import fetch from './helpers/fetch.js';
 import Icon from './components/icon';
 import Loader from './components/loader';
 
 import 'svg4everybody';
-import './fonts';
+import './fonts.js';
 
 const {
   Route,

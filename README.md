@@ -7,11 +7,8 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
 ## Features
 
   * [gulp] for running tasks
+  * [jspm] as browser package manager (uses [Babel])
   * [BrowserSync] for running the local server (it's loaded with features)
-  * [browserify] for JS module bundling, with the following plugins:
-    - [watchify] for watching and recompiling only modified scripts
-    - [babelify] for transpiling scripts with [babel]
-    - [browserify-shim] for fixing CommonJS-incompatible files
   * [React] for managing views, with the following plugins:
     - [React Router] for managing routes
     - [React Portal] for handling things like modals
@@ -35,11 +32,13 @@ See the current [roadmap].
 
 ## Getting Started
 
-Install [yo] and this generator globally:
+Install [yo], jspm and generator-wbp globally:
 
 ```sh
-❯ npm install --global yo generator-wbp
+❯ npm install --global yo jspm generator-wbp
 ```
+
+You don't have to worry about the jspm version, it will pick up the one we'll install locally for you.
 
 Now create a new directory for your project:
 
@@ -53,6 +52,8 @@ and run the generator to start scaffolding:
 ```sh
 ❯ yo wbp
 ```
+
+After the generator is done scaffolding, it will start installing dependencies; first `npm install`, then `jspm install`.
 
 ## Scripts
 
@@ -108,12 +109,9 @@ MIT © Matija Marohnić
 [yeoman]: http://yeoman.io/
 [generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
 [gulp]: http://gulpjs.com/
-[browsersync]: http://www.browsersync.io/
-[browserify]: http://browserify.org/
-[watchify]: https://github.com/substack/watchify
-[babelify]: https://github.com/babel/babelify
+[jspm]: http://jspm.io/
 [babel]: https://babeljs.io/
-[browserify-shim]: https://github.com/thlorenz/browserify-shim
+[browsersync]: http://www.browsersync.io/
 [react]: https://facebook.github.io/react/
 [react router]: http://rackt.github.io/react-router/
 [react portal]: https://github.com/tajo/react-portal

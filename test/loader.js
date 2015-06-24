@@ -25,7 +25,7 @@ describe('loader', () => {
     });
 
     it('styles the loader', () => {
-      assert.fileContent('app/index.html', '.loader')
+      assert.fileContent('app/index.html', '.loader');
     });
   });
 
@@ -51,7 +51,7 @@ describe('loader', () => {
     });
 
     it('doesn\'t style the loader', () => {
-      assert.noFileContent('app/index.html', '.loader')
+      assert.noFileContent('app/index.html', '.loader');
     });
   });
 });

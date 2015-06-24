@@ -6,8 +6,8 @@
     <title>My Web App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="stylesheet" href="/styles/app.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="styles/app.css">
 
     <!-- load the web font asynchronously with Web Font Loader -->
     <!-- https://github.com/typekit/webfontloader -->
@@ -56,16 +56,23 @@
     </style>
   </head>
   <body>
-<% if (!includeReact) { -%>
+<% if (includeReact) { -%>
+    <div id="content"></div>
+<% } else { -%>
     <div class="container">
       <h1>You look <strong>great</strong> today!</h1>
       <svg class="icon icon-heart" role="presentation">
-        <use xlink:href="/images/icons.svg#heart" />
+        <use xlink:href="images/icons.svg#heart" />
       </svg>
     </div>
-<% } else { -%>
-    <div id="content"></div>
 <% } -%>
-    <script src="/scripts/bundle.js"></script>
+
+    <!-- build:js -->
+    <script src="jspm_packages/system.js"></script>
+    <script src="jspm-config.js"></script>
+    <script>
+      System.import('scripts/app');
+    </script>
+    <!-- endbuild -->
   </body>
 </html>

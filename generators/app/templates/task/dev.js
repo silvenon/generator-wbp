@@ -3,7 +3,7 @@ import browserSync from 'browser-sync';
 
 const bs = browserSync.get('dev');
 
-gulp.task('connect:dev', ['scripts', 'styles'], (done) => {
+gulp.task('connect:dev', ['styles'], (done) => {
   bs.init({
     notify: false,
     port: 9000,
@@ -16,8 +16,10 @@ gulp.task('connect:dev', ['scripts', 'styles'], (done) => {
 
 gulp.task('watch:dev', ['connect:dev'], function () {
   gulp.watch([
-    'app/**/*.html',
-    'app/images/**/*'
+    'app/index.html',
+    'app/scripts/**/*',
+    'app/images/**/*',
+    'app/config.js'
   ]).on('change', bs.reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);

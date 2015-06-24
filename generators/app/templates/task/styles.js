@@ -4,7 +4,7 @@ import browserSync from 'browser-sync';
 import autoprefixer from 'autoprefixer-core';
 
 const $ = gulpLoadPlugins();
-const bs = browserSync.get('dev');
+const bs = browserSync.create('dev');
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/**/*.scss')

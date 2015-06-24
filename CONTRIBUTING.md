@@ -17,17 +17,29 @@ In comparison to [Grunt], gulp:
 
 There are other interesting tools rising, like [Broccoli], but I'm not sure if any of them are mature enough, so for now I'm sticking to gulp.
 
+## [jspm]
+
+Even though it's pretty new, I think jspm does it right:
+
+  * does a lot with very little setup
+  * uses [SystemJS], a standards-compliant and future-friendly module loader
+  * can pull from any registry (npm, GitHub…)
+  * supports all module formats (ES6, CommonJS, AMD, UMD…)
+  * supports mapping (e.g. [whatwg-fetch] can be imported as `fetch`)
+  * supports overriding module's `package.json`
+  * doesn't require recompilation during development
+  * can optimize code for production in advanced ways
+  * many more awesome features that I don't even know about
+
+Also, it's undergoing rapid development, thanks to [@guybedford] and others, so it will keep getting more awesome. [This][jspm-video] video is great for getting started with jspm.
+
+I used to use [Browserify], but it was kinda hard to set up and awkward to use (I mean [look at this][browserify-setup]). Before that I was using [Bower] with [wiredep], which was pretty basic, messy to set up and offered no way of importing modules.
+
 ## [Bootstrap]
 
 I think Bootstrap is great, it's very well-coded, works great accross browsers, has a strong community and, unlike many other frameworks, encourages accessibility and has it built-in!
 
 The reason why I chose **not** to include it is because everyone has their own UI preferences and it's very likely Bootstrap will not handle something the way you want, which is limiting and annoying. I think Bootstrap is an excellent learning resource, but not really a good idea to use it directly in projects where you need advanced UI control.
-
-## [Browserify]
-
-I used to use [Bower] + [wiredep] (like we do in [generator-gulp-webapp]), but Browserify offers Node-like `require()`, which improves authoring experience and frees you of worrying about the source order. Also, it consumes npm packages, which we're using for development anyway, so that's one less package manager to worry about.
-
-I'm open for convincing to move to an alternative (see [#2]), like [jspm] or [webpack], I just haven't tried it for real yet, because the learning curve seemed steeper.
 
 ## [React]
 
@@ -81,14 +93,19 @@ I'm open for convincing to move to [wd]. It seems to have a very similar goal, b
 [grunt]: http://gruntjs.com/
 [1st guideline]: https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md#guidelines
 [broccoli]: https://github.com/broccolijs/broccoli
-[bootstrap]: http://getbootstrap.com/
+[jspm]: http://jspm.io/
+[systemjs]: https://github.com/systemjs/systemjs
+[whatwg-fetch]: https://www.npmjs.com/package/whatwg-fetch
+[@guybedford]: https://github.com/guybedford
+[jspm-video]: https://youtu.be/NpMnRifyGyw
 [browserify]: http://browserify.org/
+[browserify-shim]: https://github.com/thlorenz/browserify-shim
+[browserify-setup]: https://github.com/gulpjs/gulp/blob/796989a802afda92ae3e86b65db6bb92d8371d66/docs/recipes/fast-browserify-builds-with-watchify.md
 [bower]: http://bower.io/
 [wiredep]: https://github.com/taptapship/wiredep
-[generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
-[#2]: https://github.com/silvenon/generator-wbp/issues/2
-[jspm]: http://jspm.io/
 [webpack]: http://webpack.github.io/
+[bootstrap]: http://getbootstrap.com/
+[generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
 [react]: https://facebook.github.io/react/
 [sass]: http://sass-lang.com/
 [libsass]: http://libsass.org/

@@ -25,10 +25,6 @@ describe('react', () => {
       assert.noFile('app/scripts/app.js');
     });
 
-    it('sets the correct Browserify entry', () => {
-      assert.fileContent('task/helpers/bundle.js', "'./app/scripts/app.jsx'");
-    });
-
     it('adds correct HTML', () => {
       assert.fileContent('app/index.html', 'id="content"');
     });
@@ -52,10 +48,6 @@ describe('react', () => {
       assert.file('app/scripts/app.js');
       assert.noFile('app/scripts/components/icon.jsx');
       assert.noFile('app/scripts/app.jsx');
-    });
-
-    it('sets the correct Browserify entry', () => {
-      assert.fileContent('task/helpers/bundle.js', "'./app/scripts/app.js'");
     });
 
     it('adds correct HTML', () => {

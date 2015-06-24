@@ -17,6 +17,7 @@ describe('general', () => {
   it('creates expected files', () => {
     assert.file([
       'package.json',
+      'app/config.js',
       'gulpfile.babel.js',
       'app/favicon.ico',
       'app/apple-touch-icon.png',

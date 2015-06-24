@@ -31,12 +31,30 @@ module.exports = generators.Base.extend({
   },
 
   writing: {
+    npm: function () {
+      this.fs.copyTpl(
+        this.templatePath('_package.json'),
+        this.destinationPath('package.json'),
+        {
+          includeReact: this.props.includeReact
+        }
+      );
+    },
+
+    jspm: function () {
+      this.fs.copyTpl(
+        this.templatePath('jspm-config.js'),
+        this.destinationPath('app/jspm-config.js'),
+        {
+          includeReact: this.props.includeReact
+        }
+      );
+    },
+
     tasks: function () {
       [
-        'helpers/bundle.js',
-        'helpers/lint.js',
-        'scripts.js',
         'styles.js',
+        'lint.js',
         'images.js',
         'dev.js',
         'test.js',
@@ -131,20 +149,9 @@ module.exports = generators.Base.extend({
       );
     },
 
-    deps: function () {
-      this.fs.copyTpl(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json'),
-        {
-          includeReact: this.props.includeReact
-        }
-      );
-    },
-
     test: function () {
       [
         'client.js',
-        'fixtures/index.html',
         'spec/test.js'
       ].forEach(function (file) {
         this.fs.copy(
@@ -152,6 +159,14 @@ module.exports = generators.Base.extend({
           this.destinationPath('test/' + file)
         );
       }.bind(this));
+
+      this.fs.copyTpl(
+        this.templatePath('test/fixtures/index.html'),
+        this.destinationPath('test/fixtures/index.html'),
+        {
+          includeReact: this.props.includeReact
+        }
+      );
     },
 
     icons: function () {
@@ -196,6 +211,7 @@ module.exports = generators.Base.extend({
   },
 
   install: function () {
-    this.installDependencies({bower: false});
+    this.npmInstall();
+    this.runInstall('jspm');
   }
 });
