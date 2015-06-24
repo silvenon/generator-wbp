@@ -4,6 +4,7 @@ import browserSync from 'browser-sync';
 import del from 'del';
 
 const $ = gulpLoadPlugins();
+const bs = browserSync.create();
 
 gulp.task('html', ['scripts', 'styles'], () => {
   gulp.src('app/**/*.html')
@@ -28,7 +29,7 @@ gulp.task('extras', () => {
 });
 
 gulp.task('serve:dist', (done) => {
-  browserSync({
+  bs.init({
     notify: false,
     port: 9000,
     server: {

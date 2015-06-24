@@ -5,6 +5,7 @@ import selenium from 'selenium-standalone';
 import lint from './helpers/lint';
 
 const $ = gulpLoadPlugins();
+const bs = browserSync.create();
 
 // run Mocha with ES2015
 import 'babel/register';
@@ -12,7 +13,7 @@ import 'babel/register';
 gulp.task('lint:test', lint('test/spec/**/*.js'));
 
 gulp.task('serve:test', ['scripts', 'styles'], (done) => {
-  browserSync({
+  bs.init({
     logLevel: 'silent',
     notify: false,
     open: false,
@@ -61,5 +62,5 @@ gulp.task('integration', ['serve:test', 'selenium'], function () {
 gulp.task('test', ['integration'], function () {
   global.client.end();
   selenium.child.kill();
-  browserSync.exit();
+  bs.exit();
 });

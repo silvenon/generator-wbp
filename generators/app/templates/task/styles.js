@@ -4,6 +4,7 @@ import browserSync from 'browser-sync';
 import autoprefixer from 'autoprefixer-core';
 
 const $ = gulpLoadPlugins();
+const bs = browserSync.get('dev');
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/**/*.scss')
@@ -13,5 +14,5 @@ gulp.task('styles', () => {
     .pipe($.postcss([autoprefixer]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(browserSync.stream());
+    .pipe(bs.stream());
 });
