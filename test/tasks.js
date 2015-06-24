@@ -1,5 +1,3 @@
-/* eslint quotes: [0] */
-
 import path from 'path';
 import {test as helpers} from 'yeoman-generator';
 import assert from 'yeoman-assert';
