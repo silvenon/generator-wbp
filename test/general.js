@@ -20,7 +20,6 @@ describe('general', () => {
       'gulpfile.babel.js',
       'app/favicon.ico',
       'app/apple-touch-icon.png',
-      'app/scripts/vendor/svg4everybody.js',
       'app/scripts/helpers/fetch.js',
       'app/scripts/fonts.js',
       'app/images/icons.svg',

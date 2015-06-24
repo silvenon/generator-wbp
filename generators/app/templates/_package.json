@@ -10,9 +10,7 @@
     "preview": "gulp serve:dist",
     "deploy": "aws --profile myprofile s3 sync dist s3://mybucket --region myregion"
   },
-  "browser": {
-    "svg4everybody": "./app/scripts/vendor/svg4everybody.js"
-  },
+  "browser": {},
   "browserify-shim": {},
   "browserify": {
     "transform": [
@@ -35,6 +33,7 @@
     "react-portal": "^0.5.1",
     "react-router": "^0.13.3",
 <% } -%>
+    "svg4everybody": "git+https://github.com/jonathantneal/svg4everybody.git",
     "whatwg-fetch": "0.9.0"
   },
   "devDependencies": {

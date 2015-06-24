@@ -69,7 +69,6 @@ module.exports = generators.Base.extend({
 
     scripts: function () {
       [
-        'vendor/svg4everybody.js',
         'helpers/fetch.js',
         'fonts.js'
       ].forEach(function (file) {
