@@ -11,7 +11,7 @@ import 'babel/register';
 
 gulp.task('lint:test', lint('test/spec/**/*.js'));
 
-gulp.task('connect:test', ['scripts', 'styles'], (done) => {
+gulp.task('serve:test', ['scripts', 'styles'], (done) => {
   browserSync({
     logLevel: 'silent',
     notify: false,
@@ -45,7 +45,7 @@ gulp.task('selenium', function (done) {
   });
 });
 
-gulp.task('integration', ['connect:test', 'selenium'], function () {
+gulp.task('integration', ['serve:test', 'selenium'], function () {
   return gulp.src('test/spec/**/*.js', {read: false})
     .pipe($.mocha({timeout: 10000}))
     .once('error', function () {

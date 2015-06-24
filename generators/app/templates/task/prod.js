@@ -27,7 +27,7 @@ gulp.task('extras', () => {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('connect:dist', (done) => {
+gulp.task('serve:dist', (done) => {
   browserSync({
     notify: false,
     port: 9000,

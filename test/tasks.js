@@ -39,14 +39,16 @@ describe('gulp tasks', () => {
   });
 
   it('contains development tasks', () => {
-    assert.fileContent('task/dev.js', "gulp.task('connect'");
-    assert.fileContent('task/dev.js', "gulp.task('watch'");
-    assert.fileContent('task/dev.js', "gulp.task('serve'");
+    assert.fileContent('task/dev.js', "gulp.task('connect:dev'");
+    assert.fileContent('task/dev.js', "gulp.task('watch:dev'");
+    assert.fileContent('task/dev.js', "gulp.task('serve:dev'");
   });
 
   it('contains testing tasks', () => {
     assert.fileContent('task/test.js', "gulp.task('lint:test'");
-    assert.fileContent('task/test.js', "gulp.task('connect:test'");
+    assert.noFileContent('task/test.js', "gulp.task('connect:test'");
+    assert.noFileContent('task/test.js', "gulp.task('watch:test'");
+    assert.fileContent('task/test.js', "gulp.task('serve:test'");
     assert.fileContent('task/test.js', "gulp.task('selenium'");
     assert.fileContent('task/test.js', "gulp.task('integration'");
     assert.fileContent('task/test.js', "gulp.task('test'");
@@ -58,5 +60,8 @@ describe('gulp tasks', () => {
     assert.fileContent('task/prod.js', "gulp.task('clean'");
     assert.fileContent('task/prod.js', "gulp.task('build'");
     assert.fileContent('task/prod.js', "gulp.task('default'");
+    assert.noFileContent('task/prod.js', "gulp.task('connect:dist'");
+    assert.noFileContent('task/prod.js', "gulp.task('watch:dist'");
+    assert.fileContent('task/prod.js', "gulp.task('serve:dist'");
   });
 });

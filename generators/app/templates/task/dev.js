@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 
-gulp.task('connect', ['scripts', 'styles'], (done) => {
+gulp.task('connect:dev', ['scripts', 'styles'], (done) => {
   browserSync({
     notify: false,
     port: 9000,
@@ -12,7 +12,7 @@ gulp.task('connect', ['scripts', 'styles'], (done) => {
   }, done);
 });
 
-gulp.task('watch', ['connect'], function () {
+gulp.task('watch:dev', ['connect:dev'], function () {
   gulp.watch([
     'app/**/*.html',
     'app/images/**/*'
@@ -21,4 +21,4 @@ gulp.task('watch', ['connect'], function () {
   gulp.watch('app/styles/**/*.scss', ['styles']);
 });
 
-gulp.task('serve', ['connect', 'watch']);
+gulp.task('serve:dev', ['connect:dev', 'watch:dev']);
