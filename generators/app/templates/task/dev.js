@@ -17,7 +17,11 @@ gulp.task('connect:dev', ['styles'], (done) => {
 gulp.task('watch:dev', ['connect:dev'], function () {
   gulp.watch([
     'app/index.html',
-    'app/scripts/**/*',
+<% if (includeReact) { -%>
+    'app/scripts/**/*.{js,jsx}',
+<% } else { -%>
+  'app/scripts/**/*.js',
+<% } -%>
     'app/images/**/*',
     'app/jspm-config.js'
   ]).on('change', bs.reload);

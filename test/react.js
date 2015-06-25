@@ -25,6 +25,11 @@ describe('react', () => {
       assert.noFile('app/scripts/app.js');
     });
 
+    it('uses correct extensions in the tasks', () => {
+      assert.fileContent('task/lint.js', 'app/scripts/**/*.{js,jsx}');
+      assert.fileContent('task/dev.js', 'app/scripts/**/*.{js,jsx}');
+    });
+
     it('adds correct HTML', () => {
       assert.fileContent('app/index.html', 'id="content"');
     });
@@ -48,6 +53,11 @@ describe('react', () => {
       assert.file('app/scripts/app.js');
       assert.noFile('app/scripts/components/icon.jsx');
       assert.noFile('app/scripts/app.jsx');
+    });
+
+    it('uses correct extensions in the tasks', () => {
+      assert.fileContent('task/lint.js', 'app/scripts/**/*.js');
+      assert.fileContent('task/dev.js', 'app/scripts/**/*.js');
     });
 
     it('adds correct HTML', () => {

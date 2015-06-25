@@ -15,5 +15,9 @@ function lint(files) {
   };
 }
 
-gulp.task('lint', lint('app/scripts/**/*'));
+<% if (includeReact) { -%>
+gulp.task('lint', lint('app/scripts/**/*.{js,jsx}'));
+<% } else { -%>
+gulp.task('lint', lint('app/scripts/**/*.js'));
+<% } -%>
 gulp.task('lint:test', lint('test/spec/**/*.js'));
