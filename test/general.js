@@ -17,7 +17,7 @@ describe('general', () => {
   it('creates expected files', () => {
     assert.file([
       'package.json',
-      'app/config.js',
+      'app/jspm-config.js',
       'gulpfile.babel.js',
       'app/favicon.ico',
       'app/apple-touch-icon.png',
@@ -34,7 +34,6 @@ describe('general', () => {
 
   it('creates valid json files', () => {
     assert(jsonlint.parse(fs.readFileSync('package.json', 'utf8')));
-    assert(jsonlint.parse(fs.readFileSync('bower.json', 'utf8')));
     assert(jsonlint.parse(fs.readFileSync('.eslintrc', 'utf8')));
   });
 });
