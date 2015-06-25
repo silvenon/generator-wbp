@@ -17,6 +17,7 @@ describe('test', () => {
       assert.file('test/client.js');
       assert.file('test/fixtures/index.html');
       assert.file('test/spec/test.js');
+      assert.file('.travis.yml');
     });
 
     it('has a container', () => {
