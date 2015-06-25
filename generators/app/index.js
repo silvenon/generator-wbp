@@ -202,9 +202,12 @@ module.exports = generators.Base.extend({
         'editorconfig',
         'gitignore'
       ].forEach(function (file) {
-        this.fs.copy(
+        this.fs.copyTpl(
           this.templatePath(file),
-          this.destinationPath('.' + file)
+          this.destinationPath('.' + file),
+          {
+            includeReact: this.props.includeReact
+          }
         );
       }.bind(this));
     }

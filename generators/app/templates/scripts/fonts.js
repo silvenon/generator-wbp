@@ -10,5 +10,5 @@ import 'fontfaceobserver';
 new FontFaceObserver('Open Sans')
   .check()
   .then(function () {
-    console.log('Open Sans loaded!');
+    // loaded
   });

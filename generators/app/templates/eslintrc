@@ -1,4 +1,12 @@
 {
+  "parser": "babel-eslint",
+
+<% if (includeReact) { -%>
+  "plugins": [
+    "react"
+  ],
+<% } -%>
+
   "env": {
     "node": true,
     "browser": true,
@@ -11,6 +19,18 @@
   },
 
   "rules": {
-    "quotes": [2, "single"]
+    "no-console": 2,
+    "quotes": [2, "single", "avoid-escape"]<% if (includeReact) { %>,
+    "react/jsx-no-undef": 2,
+    "react/jsx-quotes": [2, "double", "avoid-escape"],
+    "react/jsx-sort-prop-types": 2,
+    "react/jsx-uses-react": 2,
+    "react/no-did-update-set-state": 2,
+    "react/no-unknown-property": 2,
+    "react/prop-types": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/self-closing-comp": 2,
+    "react/wrap-multilines": 2
+<% } -%>
   }
 }

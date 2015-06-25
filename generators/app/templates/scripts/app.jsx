@@ -1,3 +1,5 @@
+/* eslint no-console: 0 */
+
 import React from 'react';
 import Router from 'react-router';
 import fetch from './helpers/fetch.js';
@@ -16,6 +18,8 @@ const {
 } = Router;
 
 const App = React.createClass({
+  propTypes: {},
+
   getInitialState() {
     return {
       loading: false
@@ -30,7 +34,7 @@ const App = React.createClass({
     fetch('/index.html').then((res) => {
       // a little artificial delay never hurt anyone
       setTimeout(() => {
-        console.log('Fetch API call successful!');
+        console.log(res);
         this.setState({
           loading: false
         });
@@ -63,7 +67,7 @@ const App = React.createClass({
 
 const routes = (
   <Route name="app" path="/" handler={App}>
-
+    {/* routes */}
   </Route>
 );
 

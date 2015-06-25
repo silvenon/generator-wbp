@@ -15,5 +15,5 @@ function lint(files) {
   };
 }
 
-gulp.task('lint', lint('app/scripts/**/*.js'));
+gulp.task('lint', lint('app/scripts/**/*'));
 gulp.task('lint:test', lint('test/spec/**/*.js'));

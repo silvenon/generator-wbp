@@ -12,7 +12,7 @@ export default React.createClass({
       content = (
         <div className="loader">
           <div className="loader-inner line-scale-pulse-out-rapid">
-            {[1,2,3,4,5].map(function (n) { return <div key={n} />; })}
+            {[1, 2, 3, 4, 5].map(function (n) { return <div key={n} />; })}
           </div>
         </div>
       );

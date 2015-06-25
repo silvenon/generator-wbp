@@ -2,11 +2,11 @@ import React from 'react';
 
 export default React.createClass({
   propTypes: {
-    symbol: React.PropTypes.string.isRequired,
+    height: React.PropTypes.number,
     role: React.PropTypes.string.isRequired,
+    symbol: React.PropTypes.string.isRequired,
     title: React.PropTypes.string,
-    width: React.PropTypes.number,
-    height: React.PropTypes.number
+    width: React.PropTypes.number
   },
 
   render() {

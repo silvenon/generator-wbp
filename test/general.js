@@ -32,7 +32,9 @@ describe('general', () => {
     ]);
   });
 
-  it('creates a valid package.json', () => {
+  it('creates valid json files', () => {
     assert(jsonlint.parse(fs.readFileSync('package.json', 'utf8')));
+    assert(jsonlint.parse(fs.readFileSync('bower.json', 'utf8')));
+    assert(jsonlint.parse(fs.readFileSync('.eslintrc', 'utf8')));
   });
 });
