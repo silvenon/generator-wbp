@@ -14,7 +14,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
     - [React Portal] for handling things like modals
   * [Fetch API polyfill] wrapped as a convenience helper
   * [FontFaceObserver] for [reducing FOIT][font-events] when using webfonts
-  * [ESLint] for JS linting
+  * [ESLint] for JS & JSX linting
   * [Sass] for CSS pre-processing (using [libsass])
   * [PostCSS] for CSS post-processing, with the following plugins:
     - [Autoprefixer] for adding vendor prefixes
