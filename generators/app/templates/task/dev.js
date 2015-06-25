@@ -19,7 +19,7 @@ gulp.task('watch:dev', ['connect:dev'], function () {
     'app/index.html',
     'app/scripts/**/*',
     'app/images/**/*',
-    'app/config.js'
+    'app/jspm-config.js'
   ]).on('change', bs.reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
