@@ -19,12 +19,14 @@
   },
 
   "rules": {
-    "no-console": 2,
+    "no-console": 1,
+    "no-unused-vars": [2, {"vars": "all", "args": "none"}],
     "quotes": [2, "single", "avoid-escape"]<% if (includeReact) { %>,
     "react/jsx-no-undef": 2,
     "react/jsx-quotes": [2, "double", "avoid-escape"],
     "react/jsx-sort-prop-types": 2,
     "react/jsx-uses-react": 2,
+    "react/no-did-mount-set-state": 1,
     "react/no-did-update-set-state": 2,
     "react/no-unknown-property": 2,
     "react/prop-types": 2,
