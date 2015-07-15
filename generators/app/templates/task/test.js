@@ -7,7 +7,7 @@ const $ = gulpLoadPlugins();
 const bs = browserSync.create();
 
 // run Mocha with ES2015
-import 'babel/register';
+import 'babel-core/register';
 
 gulp.task('serve:test', ['styles'], (done) => {
   bs.init({
