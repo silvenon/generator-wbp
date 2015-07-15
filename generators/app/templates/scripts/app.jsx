@@ -39,7 +39,7 @@ const App = React.createClass({
     if (this.state.loading) {
       content = (
         <div className="container">
-          <Loader loading={this.state.loading} />
+          <Loader />
         </div>
       );
     } else {
