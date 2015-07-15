@@ -198,6 +198,7 @@ module.exports = generators.Base.extend({
     dotfiles: function () {
       [
         'travis.yml',
+        'babelrc',
         'eslintrc',
         'eslintignore',
         'editorconfig',

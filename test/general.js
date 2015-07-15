@@ -25,6 +25,7 @@ describe('general', () => {
       'app/scripts/fonts.js',
       'app/images/icons.svg',
       'app/index.html',
+      '.babelrc',
       '.eslintrc',
       '.eslintignore',
       '.editorconfig',
