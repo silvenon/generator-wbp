@@ -5,7 +5,11 @@
   },
   "scripts": {
     "start": "GULP_ENV=development gulp serve:dev",
+<% if (includeReact) { -%>
+    "test": "mocha test/spec",
+<% } else { %>
     "test": "GULP_ENV=test gulp test",
+<% } %>
     "build": "GULP_ENV=production gulp",
     "preview": "gulp serve:dist",
     "deploy": "aws --profile myprofile s3 sync dist s3://mybucket --region myregion"
@@ -29,19 +33,40 @@
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-css": "^1.1.6",
     "gulp-minify-html": "^1.0.3",
+<% if (!includeReact) { -%>
     "gulp-mocha": "^2.1.1",
+<% } -%>
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^5.1.8",
     "gulp-sass": "^2.0.1",
     "gulp-size": "^1.2.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.5",
+<% if (includeReact) { -%>
+    "jsdom": "^3.1.2",
+<% } -%>
     "jspm": "^0.16.0-beta.3",
+<% if (includeReact) { -%>
+    "mocha": "^2.2.5",
+<% } -%>
     "require-dir": "^0.3.0",
+<% if (!includeReact) { -%>
     "selenium-standalone": "^4.4.2",
+<% } -%>
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0"
+<% if (!includeReact) { -%>,
     "webdrivercss": "^1.1.3",
     "webdriverio": "^2.4.5"
+<% } -%>
   },
+<% if (includeReact) { -%>
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-portal": "^0.6.0",
+    "react-router": "^0.13.3"
+  },
+<% } -%>
   "jspm": {
     "directories": {
       "baseURL": "app"

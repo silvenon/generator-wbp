@@ -1,6 +1,6 @@
 /* eslint no-console: 0 */
 
-import React from 'react';
+import React from 'react/addons';
 import Router from 'react-router';
 import fetch from './helpers/fetch.js';
 import Icon from './components/icon';

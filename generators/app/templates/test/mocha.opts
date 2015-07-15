@@ -1,0 +1,8 @@
+--recursive
+<% if (includeReact) { %>
+--compilers js:babel-core/register,jsx:babel-core/register
+--require ./test/helpers/common.js
+--slow 300
+<% } else { -%>
+--compilers js:babel-core/register
+<% } -%>

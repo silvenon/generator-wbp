@@ -48,14 +48,15 @@ I chose React among other frameworks because it's:
   * simple to understand and use
   * unobtrusive, i.e. can be combined with other frameworks (if you're into that)
   * easy to start with, Babel has built-in JSX support
+  * very easy and fast to test
 
-It worked great for me so far and is the only one for which I can say that I kinda-sorta mastered.
+It worked great for me so far and is the only one which I kinda-sorta mastered.
 
 I made it optional because there is a good chance you'll want something else, and removing it manually each time isn't trivial.
 
 ### ES2015 Classes
 
-Currently using ES2015 classes with React doesn't really offer any advantages, only limitations -- we are unable to use mixins, we have to bind `this` to every custom method etc. That's why I'm using React's `#createClass` method instead.
+Currently using ES2015 classes with React doesn't really offer any advantages, only limitations -- we are unable to use mixins, we have to bind `this` to every custom method etc. That's why I'm using [React.createClass] method instead.
 
 ## [Sass]
 
@@ -107,6 +108,7 @@ I'm open for convincing to move to [wd]. It seems to have a very similar goal, b
 [bootstrap]: http://getbootstrap.com/
 [generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
 [react]: https://facebook.github.io/react/
+[react.createclass]: https://facebook.github.io/react/docs/top-level-api.html#react.createclass
 [sass]: http://sass-lang.com/
 [libsass]: http://libsass.org/
 [postcss]: https://github.com/postcss/postcss

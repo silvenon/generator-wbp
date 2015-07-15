@@ -24,8 +24,12 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [imagemin] for image optimization
   * [SVG][svg-symbol] for icons (`<symbol>` + `<use>`) + [polyfill][svg4everybody] for IE
   * [CSS loader] component for React
-  * [selenium-standalone] for installing drivers and running the Selenium server
   * [Mocha] as the test framework
+  * [jsdom] for React testing (with [TestUtils])
+
+If the React option is off, the generator falls back to Selenium testing:
+
+  * [selenium-standalone] for installing drivers and running the Selenium server
   * [WebdriverIO] as Node.js bindings for Selenium ([more info][integration-testing] about the setup)
 
 See the current [roadmap].
@@ -132,6 +136,8 @@ MIT © Matija Marohnić
 [css loader]: http://connoratherton.com/loaders
 [selenium-standalone]: https://github.com/vvo/selenium-standalone
 [mocha]: http://mochajs.org/
+[jsdom]: https://github.com/tmpvar/jsdom
+[testutils]: https://facebook.github.io/react/docs/test-utils.html
 [webdriverio]: http://webdriver.io/
 [integration-testing]: http://twin.github.io/selenium-testing-workflow-with-webdriverio/
 [roadmap]: https://github.com/silvenon/generator-wbp/labels/enhancement

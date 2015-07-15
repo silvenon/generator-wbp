@@ -1,4 +1,5 @@
 import path from 'path';
+import shell from 'shelljs';
 import {test as helpers} from 'yeoman-generator';
 import assert from 'yeoman-assert';
 
@@ -13,15 +14,31 @@ describe('test', () => {
         .on('end', done);
     });
 
-    it('creates expected files', () => {
-      assert.file('test/client.js');
-      assert.file('test/fixtures/index.html');
-      assert.file('test/spec/test.js');
-      assert.file('.travis.yml');
+    it('adds dependencies', () => {
+      assert.fileContent('package.json', 'jsdom');
     });
 
-    it('has a container', () => {
-      assert.fileContent('test/fixtures/index.html', 'id="content"');
+    it('creates expected files', () => {
+      assert.file('test/mocha.opts');
+      assert.file('test/helpers/classList.js');
+      assert.file('test/helpers/common.js');
+      assert.file('test/spec/document.js');
+      assert.file('test/spec/test.jsx');
+    });
+
+    it('runs the tests with Mocha CLI', () => {
+      assert.fileContent('package.json', '"mocha"');
+      assert.fileContent('package.json', 'mocha test/spec');
+    });
+
+    it('allows writing tests in JSX', () => {
+      assert.fileContent('test/mocha.opts', 'jsx');
+    });
+
+    it('uses React with addons everywhere', () => {
+      shell.find(['app/scripts', 'test'])
+        .filter(file => file.match(/\.jsx$/))
+        .forEach(file => assert.noFileContent(file, "'react'"));
     });
   });
 
@@ -35,14 +52,27 @@ describe('test', () => {
         .on('end', done);
     });
 
+    it('adds dependencies', () => {
+      assert.fileContent('package.json', 'selenium-standalone');
+      assert.fileContent('package.json', 'webdriverio');
+      assert.fileContent('package.json', 'webdrivercss');
+    });
+
+    it('runs the tests with gulp', () => {
+      assert.file('task/test.js');
+      assert.fileContent('gulpfile.babel.js', 'task/test');
+      assert.fileContent('package.json', '"gulp-mocha"');
+      assert.fileContent('package.json', 'gulp test');
+    });
+
     it('creates expected files', () => {
-      assert.file('test/client.js');
+      assert.file('test/helpers/client.js');
       assert.file('test/fixtures/index.html');
       assert.file('test/spec/test.js');
     });
 
-    it('doesn\'t have a container', () => {
-      assert.noFileContent('test/fixtures/index.html', 'id="content"');
+    it('installs PhantomJS v2 on Travis CI', () => {
+      assert.fileContent('.travis.yml', 'phantomjs');
     });
   });
 });

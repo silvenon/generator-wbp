@@ -57,7 +57,6 @@ module.exports = generators.Base.extend({
         'lint.js',
         'images.js',
         'dev.js',
-        'test.js',
         'prod.js'
       ].forEach(function (filePath) {
         this.fs.copyTpl(
@@ -69,9 +68,19 @@ module.exports = generators.Base.extend({
         );
       }.bind(this));
 
-      this.fs.copy(
+      if (!this.props.includeReact) {
+        this.fs.copy(
+          this.templatePath('task/test.js'),
+          this.destinationPath('task/test.js')
+        );
+      }
+
+      this.fs.copyTpl(
         this.templatePath('gulpfile.babel.js'),
-        this.destinationPath('gulpfile.babel.js')
+        this.destinationPath('gulpfile.babel.js'),
+        {
+          includeReact: this.props.includeReact
+        }
       );
     },
 
@@ -150,10 +159,24 @@ module.exports = generators.Base.extend({
     },
 
     test: function () {
-      [
-        'client.js',
-        'spec/test.js'
-      ].forEach(function (file) {
+      var files;
+
+      if (this.props.includeReact) {
+        files = [
+          'helpers/classList.js',
+          'helpers/common.js',
+          'spec/document.js',
+          'spec/test.jsx'
+        ];
+      } else {
+        files = [
+          'fixtures/index.html',
+          'helpers/client.js',
+          'spec/test.js'
+        ];
+      }
+
+      files.forEach(function (file) {
         this.fs.copy(
           this.templatePath('test/' + file),
           this.destinationPath('test/' + file)
@@ -161,8 +184,8 @@ module.exports = generators.Base.extend({
       }.bind(this));
 
       this.fs.copyTpl(
-        this.templatePath('test/fixtures/index.html'),
-        this.destinationPath('test/fixtures/index.html'),
+        this.templatePath('test/mocha.opts'),
+        this.destinationPath('test/mocha.opts'),
         {
           includeReact: this.props.includeReact
         }

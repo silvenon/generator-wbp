@@ -1,4 +1,4 @@
-import client from '../client';
+import client from '../helpers/client';
 
 describe('suite', () => {
   before(() => {

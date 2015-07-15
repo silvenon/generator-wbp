@@ -1,12 +1,18 @@
-import React from 'react';
+import React from 'react/addons';
 
 export default React.createClass({
   propTypes: {
-    height: React.PropTypes.number,
+    height: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
     role: React.PropTypes.string.isRequired,
     symbol: React.PropTypes.string.isRequired,
     title: React.PropTypes.string,
-    width: React.PropTypes.number
+    width: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ])
   },
 
   render() {
