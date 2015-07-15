@@ -19,15 +19,11 @@ const App = React.createClass({
 
   getInitialState() {
     return {
-      loading: false
+      loading: true
     };
   },
 
   componentDidMount() {
-    this.setState({
-      loading: true
-    });
-
     fetch('/index.html').then((res) => {
       // a little artificial delay never hurt anyone
       setTimeout(() => {
