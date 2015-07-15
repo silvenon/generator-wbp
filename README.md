@@ -14,7 +14,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
     - [React Portal] for handling things like modals
   * [Fetch API polyfill] wrapped as a convenience helper
   * [FontFaceObserver] for [reducing FOIT][font-events] when using webfonts
-  * [ESLint] for JS & JSX linting
+  * [ESLint] for JS & JSX linting (if you are using [Atom], I highly recommend [linter-eslint])
   * [Sass] for CSS pre-processing (using [libsass])
   * [PostCSS] for CSS post-processing, with the following plugins:
     - [Autoprefixer] for adding vendor prefixes
@@ -123,6 +123,8 @@ MIT © Matija Marohnić
 [fontfaceobserver]: https://github.com/bramstein/fontfaceobserver
 [font-events]: http://www.filamentgroup.com/lab/font-events.html
 [eslint]: http://eslint.org/
+[atom]: https://atom.io/
+[linter-eslint]: https://atom.io/packages/linter-eslint
 [sass]: http://sass-lang.com/
 [libsass]: http://libsass.org/
 [postcss]: https://github.com/postcss/postcss
