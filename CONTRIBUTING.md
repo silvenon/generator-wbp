@@ -56,7 +56,7 @@ I made it optional because there is a good chance you'll want something else, an
 
 ### ES2015 Classes
 
-Currently using ES2015 classes with React doesn't really offer any advantages, only limitations -- we are unable to use mixins, we have to bind `this` to every custom method etc. That's why I'm using [React.createClass] method instead.
+Currently using ES2015 classes with React doesn't really offer any advantages, only limitations—we are unable to use mixins, we have to bind `this` to every custom method etc. That's why I'm using the [React.createClass] method instead.
 
 ## [Sass]
 
