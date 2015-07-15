@@ -48,9 +48,7 @@
     "jspm": "^0.16.0-beta.3",
 <% if (includeReact) { -%>
     "mocha": "^2.2.5",
-<% } -%>
-    "require-dir": "^0.3.0",
-<% if (!includeReact) { -%>
+<% } else { -%>
     "selenium-standalone": "^4.4.2",
 <% } -%>
     "sinon": "^1.15.4",
