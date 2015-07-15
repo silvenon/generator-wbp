@@ -1,5 +1,3 @@
-/* eslint no-console: 0 */
-
 import fetch from './helpers/fetch';
 
 import 'svg4everybody';
