@@ -11,9 +11,6 @@ import './fonts.js';
 
 const {
   Route,
-  DefaultRoute,
-  NotFoundRoute,
-  Redirect,
   RouteHandler
 } = Router;
 
