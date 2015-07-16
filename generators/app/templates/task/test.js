@@ -3,9 +3,6 @@ import $ from './helpers/plugins';
 import {test as server} from './helpers/server';
 import selenium from 'selenium-standalone';
 
-// run Mocha with ES2015
-import 'babel-core/register';
-
 gulp.task('serve:test', ['styles'], (done) => {
   server.init({
     logLevel: 'silent',

@@ -19,7 +19,6 @@ describe('test', () => {
     });
 
     it('creates expected files', () => {
-      assert.file('test/mocha.opts');
       assert.file('test/helpers/classList.js');
       assert.file('test/helpers/common.js');
       assert.file('test/spec/document.js');
@@ -29,10 +28,7 @@ describe('test', () => {
     it('runs the tests with Mocha CLI', () => {
       assert.fileContent('package.json', '"mocha"');
       assert.fileContent('package.json', 'mocha test/spec');
-    });
-
-    it('allows writing tests in JSX', () => {
-      assert.fileContent('test/mocha.opts', 'jsx');
+      assert.file('test/mocha.opts');
     });
 
     it('uses React with addons everywhere', () => {

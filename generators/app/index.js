@@ -155,6 +155,7 @@ module.exports = generators.Base.extend({
 
       if (this.props.includeReact) {
         files = [
+          'mocha.opts',
           'helpers/classList.js',
           'helpers/common.js',
           'spec/document.js',
@@ -174,14 +175,6 @@ module.exports = generators.Base.extend({
           this.destinationPath('test/' + file)
         );
       }.bind(this));
-
-      this.fs.copyTpl(
-        this.templatePath('test/mocha.opts'),
-        this.destinationPath('test/mocha.opts'),
-        {
-          includeReact: this.props.includeReact
-        }
-      );
     },
 
     icons: function () {
