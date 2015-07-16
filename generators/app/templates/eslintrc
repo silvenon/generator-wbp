@@ -21,6 +21,7 @@
   "rules": {
     "no-console": 1,
     "no-unused-vars": [2, {"vars": "all", "args": "none"}],
+    "no-empty": 0,
     "quotes": [2, "single", "avoid-escape"]<% if (includeReact) { %>,
     "react/jsx-no-undef": 2,
     "react/jsx-quotes": [2, "double", "avoid-escape"],
