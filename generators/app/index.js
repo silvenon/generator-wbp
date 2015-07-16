@@ -156,7 +156,7 @@ module.exports = generators.Base.extend({
       if (this.props.includeReact) {
         files = [
           'mocha.opts',
-          'helpers/classList.js',
+          'vendor/classList.js',
           'helpers/common.js',
           'spec/document.js',
           'spec/test.jsx'

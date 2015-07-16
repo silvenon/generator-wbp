@@ -1,4 +1,1 @@
-app/scripts/vendor
-<% if (includeReact) { -%>
-test/helpers/classList.js
-<% } -%>
+*/vendor

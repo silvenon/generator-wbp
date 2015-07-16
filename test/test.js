@@ -19,7 +19,7 @@ describe('test', () => {
     });
 
     it('creates expected files', () => {
-      assert.file('test/helpers/classList.js');
+      assert.file('test/vendor/classList.js');
       assert.file('test/helpers/common.js');
       assert.file('test/spec/document.js');
       assert.file('test/spec/test.jsx');

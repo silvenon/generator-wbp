@@ -8,5 +8,5 @@ before(() => {
   global.Element = window.Element;
   global.navigator = {userAgent: 'node.js'};
   // shim document.classList
-  require('../helpers/classList')(global.window);
+  require('../vendor/classList')(global.window);
 });
