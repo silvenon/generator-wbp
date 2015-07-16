@@ -41,20 +41,12 @@ module.exports = generators.Base.extend({
       );
     },
 
-    jspm: function () {
-      this.fs.copyTpl(
-        this.templatePath('jspm-config.js'),
-        this.destinationPath('app/jspm-config.js'),
-        {
-          includeReact: this.props.includeReact
-        }
-      );
-    },
-
     tasks: function () {
       [
+        'helpers/plugins.js',
+        'helpers/server.js',
+        'scripts.js',
         'styles.js',
-        'lint.js',
         'images.js',
         'dev.js',
         'prod.js'
@@ -240,6 +232,5 @@ module.exports = generators.Base.extend({
 
   install: function () {
     this.npmInstall();
-    this.runInstall('jspm');
   }
 });

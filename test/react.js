@@ -13,7 +13,7 @@ describe('react', () => {
         .on('end', done);
     });
 
-    it('adds dependencies', () => {
+    it('adds expected dependencies', () => {
       assert.fileContent('package.json', '"react"');
       assert.fileContent('package.json', '"react-portal"');
       assert.fileContent('package.json', '"react-router"');
@@ -26,8 +26,7 @@ describe('react', () => {
     });
 
     it('uses correct extensions in the tasks', () => {
-      assert.fileContent('task/lint.js', 'app/scripts/**/*.{js,jsx}');
-      assert.fileContent('task/dev.js', 'app/scripts/**/*.{js,jsx}');
+      assert.fileContent('task/scripts.js', '.{js,jsx}');
     });
 
     it('adds correct HTML', () => {
@@ -45,7 +44,7 @@ describe('react', () => {
         .on('end', done);
     });
 
-    it('doesn\'t add dependencies', () => {
+    it('adds expected dependencies', () => {
       assert.noFileContent('package.json', '"react"');
     });
 
@@ -56,8 +55,8 @@ describe('react', () => {
     });
 
     it('uses correct extensions in the tasks', () => {
-      assert.fileContent('task/lint.js', 'app/scripts/**/*.js');
-      assert.fileContent('task/dev.js', 'app/scripts/**/*.js');
+      assert.fileContent('task/scripts.js', '.js');
+      assert.noFileContent('task/scripts.js', 'jsx');
     });
 
     it('adds correct HTML', () => {

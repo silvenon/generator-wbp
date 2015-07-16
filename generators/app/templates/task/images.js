@@ -1,7 +1,5 @@
 import gulp from 'gulp';
-import gulpLoadPlugins from 'gulp-load-plugins';
-
-const $ = gulpLoadPlugins();
+import $ from './helpers/plugins';
 
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')

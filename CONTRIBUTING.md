@@ -17,9 +17,13 @@ In comparison to [Grunt], gulp:
 
 There are other interesting tools rising, like [Broccoli], but I'm not sure if any of them are mature enough, so for now I'm sticking to gulp.
 
-## [jspm]
+## [browserify]
 
-Even though it's pretty new, I think jspm does it right:
+I started consuming packages with [Bower] + [wiredep], but I needed more control and better authoring experience, so I switched to [browserify]. It offers a nice node-like `require()`, which makes organizing code very easy.
+
+### [jspm]
+
+I tried jspm out because it has lots of nice features:
 
   * does a lot with very little setup
   * uses [SystemJS], a standards-compliant and future-friendly module loader
@@ -31,9 +35,13 @@ Even though it's pretty new, I think jspm does it right:
   * can optimize code for production in advanced ways
   * many more awesome features that I don't even know about
 
-Also, it's undergoing rapid development, thanks to [@guybedford] and others, so it will keep getting more awesome. [This][jspm-video] video is great for getting started with jspm.
+[This][jspm-video] video is a nice intro to jspm.
 
-I used to use [Browserify], but it was kinda hard to set up and awkward to use (I mean [look at this][browserify-setup]). Before that I was using [Bower] with [wiredep], which was pretty basic, messy to set up and offered no way of importing modules.
+But I found it too advanced for me and it was starting to get in the way, so I switched back. Until I learn to tame it or find a better alternative, I'm sticking to browserify.
+
+### [webpack]
+
+I still haven't tried webpack, though, I hear nice things about it.
 
 ## [Bootstrap]
 
@@ -97,13 +105,10 @@ I'm open for convincing to move to [wd]. It seems to have a very similar goal, b
 [jspm]: http://jspm.io/
 [systemjs]: https://github.com/systemjs/systemjs
 [whatwg-fetch]: https://www.npmjs.com/package/whatwg-fetch
-[@guybedford]: https://github.com/guybedford
-[jspm-video]: https://youtu.be/NpMnRifyGyw
 [browserify]: http://browserify.org/
-[browserify-shim]: https://github.com/thlorenz/browserify-shim
-[browserify-setup]: https://github.com/gulpjs/gulp/blob/796989a802afda92ae3e86b65db6bb92d8371d66/docs/recipes/fast-browserify-builds-with-watchify.md
 [bower]: http://bower.io/
 [wiredep]: https://github.com/taptapship/wiredep
+[jspm-video]: https://youtu.be/NpMnRifyGyw
 [webpack]: http://webpack.github.io/
 [bootstrap]: http://getbootstrap.com/
 [generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp

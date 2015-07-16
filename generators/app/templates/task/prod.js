@@ -1,29 +1,20 @@
 import gulp from 'gulp';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
-import jspm from 'jspm';
+import $ from './helpers/plugins';
+import {prod as server} from './helpers/server';
 import del from 'del';
 
-const $ = gulpLoadPlugins();
-const bs = browserSync.create();
-
-gulp.task('bundle', () => {
-  return jspm.bundleSFX('scripts/app', './dist/scripts/app.js', {
-    minify: true,
-    mangle: true,
-    sourceMaps: false
-  });
-});
-
-gulp.task('html', ['bundle', 'styles'], () => {
+gulp.task('html', ['scripts', 'styles'], () => {
   gulp.src('app/index.html')
-    .pipe($.htmlReplace({js: 'scripts/app.js'}))
     .pipe($.minifyHtml({conditionals: true, loose: true}))
     .pipe(gulp.dest('dist'));
 
-  return gulp.src('.tmp/styles/*.css')
-    .pipe($.minifyCss({compatibility: '*'}))
-    .pipe(gulp.dest('dist/styles'));
+  return gulp.src([
+    '.tmp/scripts/*.js',
+    '.tmp/styles/*.css'
+  ], {base: '.tmp'})
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('extras', () => {
@@ -35,7 +26,7 @@ gulp.task('extras', () => {
 });
 
 gulp.task('serve:dist', (done) => {
-  bs.init({
+  server.init({
     notify: false,
     port: 9000,
     server: {

@@ -14,7 +14,7 @@ describe('test', () => {
         .on('end', done);
     });
 
-    it('adds dependencies', () => {
+    it('adds expected dependencies', () => {
       assert.fileContent('package.json', 'jsdom');
     });
 
@@ -52,10 +52,11 @@ describe('test', () => {
         .on('end', done);
     });
 
-    it('adds dependencies', () => {
+    it('adds expected dependencies', () => {
       assert.fileContent('package.json', 'selenium-standalone');
       assert.fileContent('package.json', 'webdriverio');
       assert.fileContent('package.json', 'webdrivercss');
+      assert.noFileContent('package.json', 'jsdom');
     });
 
     it('runs the tests with gulp', () => {
@@ -69,6 +70,7 @@ describe('test', () => {
       assert.file('test/helpers/client.js');
       assert.file('test/fixtures/index.html');
       assert.file('test/spec/test.js');
+      assert.noFile('test/spec/test.jsx');
     });
 
     it('installs PhantomJS v2 on Travis CI', () => {

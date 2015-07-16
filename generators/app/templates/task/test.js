@@ -1,16 +1,13 @@
 import gulp from 'gulp';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
+import $ from './helpers/plugins';
+import {test as server} from './helpers/server';
 import selenium from 'selenium-standalone';
-
-const $ = gulpLoadPlugins();
-const bs = browserSync.create();
 
 // run Mocha with ES2015
 import 'babel-core/register';
 
 gulp.task('serve:test', ['styles'], (done) => {
-  bs.init({
+  server.init({
     logLevel: 'silent',
     notify: false,
     open: false,
@@ -59,5 +56,5 @@ gulp.task('integration', ['serve:test', 'selenium'], function () {
 gulp.task('test', ['integration'], function () {
   global.client.end();
   selenium.child.kill();
-  bs.exit();
+  server.exit();
 });

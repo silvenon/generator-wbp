@@ -7,18 +7,28 @@
     "start": "GULP_ENV=development gulp serve:dev",
 <% if (includeReact) { -%>
     "test": "mocha test/spec",
-<% } else { %>
+<% } else { -%>
     "test": "GULP_ENV=test gulp test",
-<% } %>
+<% } -%>
     "build": "GULP_ENV=production gulp",
     "preview": "gulp serve:dist",
     "deploy": "aws --profile myprofile s3 sync dist s3://mybucket --region myregion"
+  },
+  "browser": {
+    "fetch": "whatwg-fetch"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.0",
     "babel-core": "^5.6.18",
     "babel-eslint": "^3.1.18",
+    "babelify": "^6.1.3",
     "browser-sync": "^2.7.12",
+    "browserify": "^10.2.6",
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
     "del": "^1.2.0",
@@ -27,7 +37,6 @@
     "gulp": "^3.9.0",
     "gulp-cache": "^0.2.10",
     "gulp-eslint": "^0.14.0",
-    "gulp-html-replace": "^1.5.0",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^2.2.1",
     "gulp-load-plugins": "^1.0.0-rc.1",
@@ -41,50 +50,31 @@
     "gulp-sass": "^2.0.1",
     "gulp-size": "^1.2.1",
     "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.5",
 <% if (includeReact) { -%>
     "jsdom": "^3.1.2",
-<% } -%>
-    "jspm": "^0.16.0-beta.3",
-<% if (includeReact) { -%>
     "mocha": "^2.2.5",
 <% } else { -%>
     "selenium-standalone": "^4.4.2",
 <% } -%>
     "sinon": "^1.15.4",
-    "sinon-chai": "^2.8.0"
-<% if (!includeReact) { -%>,
+    "sinon-chai": "^2.8.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.3"<% if (!includeReact) { %>,
     "webdrivercss": "^1.1.3",
-    "webdriverio": "^2.4.5"
-<% } -%>
+    "webdriverio": "^2.4.5"<% } %>
   },
-<% if (includeReact) { -%>
   "dependencies": {
+    "es6-promise": "^2.3.0",
+    "fontfaceobserver": "^1.5.0",
+<% if (includeReact) { -%>
     "react": "^0.13.3",
     "react-portal": "^0.6.0",
-    "react-router": "^0.13.3"
-  },
+    "react-router": "^0.13.3",
 <% } -%>
-  "jspm": {
-    "directories": {
-      "baseURL": "app"
-    },
-    "configFile": "app/jspm-config.js",
-    "dependencies": {
-      "es6-promise": "npm:es6-promise@^2.3.0",
-      "fetch": "npm:whatwg-fetch@^0.9.0",
-      "fontfaceobserver": "npm:fontfaceobserver@^1.4.12",
-<% if (includeReact) { -%>
-      "react": "npm:react@^0.13.3",
-      "react-portal": "npm:react-portal@^0.6.0",
-      "react-router": "npm:react-router@^0.13.3",
-<% } -%>
-      "svg4everybody": "github:jonathantneal/svg4everybody@^1.0.0"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.6.4",
-      "babel-runtime": "npm:babel-runtime@^5.6.4",
-      "core-js": "npm:core-js@^0.9.17"
-    }
+    "svg4everybody": "jonathantneal/svg4everybody",
+    "whatwg-fetch": "^0.9.0"
   }
 }

@@ -1,10 +1,7 @@
 import gulp from 'gulp';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
+import $ from './helpers/plugins';
+import {dev as server} from './helpers/server';
 import autoprefixer from 'autoprefixer-core';
-
-const $ = gulpLoadPlugins();
-const bs = browserSync.create('dev');
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/**/*.scss')
@@ -14,5 +11,5 @@ gulp.task('styles', () => {
     .pipe($.postcss([autoprefixer]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(bs.stream());
+    .pipe(server.stream());
 });

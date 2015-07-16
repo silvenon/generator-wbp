@@ -1,5 +1,5 @@
+import './task/scripts';
 import './task/styles';
-import './task/lint';
 import './task/images';
 import './task/dev';
 <% if (!includeReact) { -%>

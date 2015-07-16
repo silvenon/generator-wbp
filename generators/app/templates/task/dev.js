@@ -1,10 +1,8 @@
 import gulp from 'gulp';
-import browserSync from 'browser-sync';
+import {dev as server} from './helpers/server';
 
-const bs = browserSync.get('dev');
-
-gulp.task('connect:dev', ['styles'], (done) => {
-  bs.init({
+gulp.task('connect:dev', ['scripts', 'styles'], (done) => {
+  server.init({
     notify: false,
     port: 9000,
     open: false,
@@ -17,14 +15,8 @@ gulp.task('connect:dev', ['styles'], (done) => {
 gulp.task('watch:dev', ['connect:dev'], function () {
   gulp.watch([
     'app/index.html',
-<% if (includeReact) { -%>
-    'app/scripts/**/*.{js,jsx}',
-<% } else { -%>
-  'app/scripts/**/*.js',
-<% } -%>
-    'app/images/**/*',
-    'app/jspm-config.js'
-  ]).on('change', bs.reload);
+    'app/images/**/*'
+  ]).on('change', server.reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
 });

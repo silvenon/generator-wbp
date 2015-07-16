@@ -1,5 +1,4 @@
 app/scripts/vendor
-app/jspm-config.js
 <% if (includeReact) { -%>
 test/helpers/classList.js
 <% } -%>

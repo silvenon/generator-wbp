@@ -10,13 +10,13 @@ describe('gulp tasks', () => {
         .on('end', done);
     });
 
-    it('contains style tasks', () => {
-      assert.fileContent('task/styles.js', "gulp.task('styles'");
+    it('contains script tasks', () => {
+      assert.fileContent('task/scripts.js', "gulp.task('scripts'");
+      assert.fileContent('task/scripts.js', "gulp.task('lint'");
     });
 
-    it('contains lint tasks', () => {
-      assert.fileContent('task/lint.js', "gulp.task('lint'");
-      assert.fileContent('task/lint.js', "gulp.task('lint:test'");
+    it('contains style tasks', () => {
+      assert.fileContent('task/styles.js', "gulp.task('styles'");
     });
 
     it('contains image tasks', () => {
@@ -36,6 +36,10 @@ describe('gulp tasks', () => {
       assert.fileContent('task/prod.js', "gulp.task('build'");
       assert.fileContent('task/prod.js', "gulp.task('default'");
       assert.fileContent('task/prod.js', "gulp.task('serve:dist'");
+    });
+
+    it('doesn\'t contain testing tasks', () => {
+      assert.noFile('task/test.js');
     });
   });
 

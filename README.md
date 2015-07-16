@@ -7,7 +7,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
 ## Features
 
   * [gulp] for running tasks
-  * [jspm] as browser package manager (uses [Babel])
+  * [browserify] for loading node modules on the front-end (uses [Babel])
   * [BrowserSync] for running the local server (it's loaded with features)
   * [React] for managing views, with the following plugins:
     - [React Router] for managing routes
@@ -36,13 +36,11 @@ See the current [roadmap].
 
 ## Getting Started
 
-Install [yo], jspm and generator-wbp globally:
+Install [yo] and generator-wbp globally:
 
 ```sh
-❯ npm install --global yo jspm generator-wbp
+❯ npm install --global yo generator-wbp
 ```
-
-You don't have to worry about the jspm version, it will pick up the one we'll install locally for you.
 
 Now create a new directory for your project:
 
@@ -51,13 +49,11 @@ Now create a new directory for your project:
 ❯ cd my-webapp
 ```
 
-and run the generator to start scaffolding:
+and run the generator to start scaffolding and installing dependencies:
 
 ```sh
 ❯ yo wbp
 ```
-
-After the generator is done scaffolding, it will start installing dependencies; first `npm install`, then `jspm install`.
 
 ## Scripts
 
@@ -113,7 +109,7 @@ MIT © Matija Marohnić
 [yeoman]: http://yeoman.io/
 [generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
 [gulp]: http://gulpjs.com/
-[jspm]: http://jspm.io/
+[browserify]: http://browserify.org/
 [babel]: https://babeljs.io/
 [browsersync]: http://www.browsersync.io/
 [react]: https://facebook.github.io/react/
