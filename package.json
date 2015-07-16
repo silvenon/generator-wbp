@@ -1,6 +1,6 @@
 {
   "name": "generator-wbp",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Provides a modern workflow for developing web apps and sites",
   "license": "MIT",
   "main": "generators/app/index.js",
