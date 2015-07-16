@@ -27,7 +27,7 @@
     "react/jsx-quotes": [2, "double", "avoid-escape"],
     "react/jsx-sort-prop-types": 2,
     "react/jsx-uses-react": 2,
-    "react/no-did-mount-set-state": [1, "allow-in-func"],
+    "react/no-did-mount-set-state": [2, "allow-in-func"],
     "react/no-did-update-set-state": 2,
     "react/no-unknown-property": 2,
     "react/prop-types": 2,
