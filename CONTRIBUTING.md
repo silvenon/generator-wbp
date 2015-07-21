@@ -1,8 +1,6 @@
 # Contributing
 
-Go crazy with suggestions and requests, I'm listening.
-
-I created this generator for myself and my purposes, which means that I'll be maintaining it regularly (until something better comes along). This also means that I will reject requests that are not really my style (sorry), but you can be sure that I'll consider them carefully.
+Go crazy with suggestions and requests, I'm listening. I created this generator for myself and my purposes, which means that I'll be maintaining it regularly (until a better tool comes along).
 
 I want to make this generator a collection of best practices and I will do my best to document why I made certain choices.
 
