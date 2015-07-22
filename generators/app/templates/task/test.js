@@ -3,7 +3,7 @@ import $ from './helpers/plugins';
 import {test as server} from './helpers/server';
 import selenium from 'selenium-standalone';
 
-gulp.task('serve:test', ['styles'], (done) => {
+gulp.task('serve:test', ['styles'], done => {
   server.init({
     logLevel: 'silent',
     notify: false,

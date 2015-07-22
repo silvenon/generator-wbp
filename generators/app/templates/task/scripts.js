@@ -34,7 +34,6 @@ const bundle = function () {
 };
 
 gulp.task('scripts', bundle);
-
 b.on('update', bundle);
 
 gulp.task('lint', () => {

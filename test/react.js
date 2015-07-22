@@ -4,7 +4,7 @@ import assert from 'yeoman-assert';
 
 describe('react', () => {
   describe('on', () => {
-    before((done) => {
+    before(done => {
       helpers.run(path.join(__dirname, '../generators/app'))
         .withOptions({skipInstall: true})
         .withPrompts({
@@ -35,7 +35,7 @@ describe('react', () => {
   });
 
   describe('off', () => {
-    before((done) => {
+    before(done => {
       helpers.run(path.join(__dirname, '../generators/app'))
         .withOptions({skipInstall: true})
         .withPrompts({

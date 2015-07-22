@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import {dev as server} from './helpers/server';
 
-gulp.task('connect:dev', ['scripts', 'styles'], (done) => {
+gulp.task('connect:dev', ['scripts', 'styles'], done => {
   server.init({
     notify: false,
     port: 9000,

@@ -22,7 +22,7 @@ const App = React.createClass({
   },
 
   componentDidMount() {
-    fetch('/index.html').then((res) => {
+    fetch('/index.html').then(res => {
       // a little artificial delay never hurt anyone
       setTimeout(() => {
         console.log(res);
@@ -62,7 +62,7 @@ const routes = (
   </Route>
 );
 
-Router.run(routes, (Handler) => {
+Router.run(routes, Handler => {
   React.render(<Handler />, document.getElementById('content'));
 });
 
