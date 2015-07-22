@@ -16,18 +16,18 @@ gulp.task('serve:test', ['styles'], done => {
   }, done);
 });
 
-gulp.task('selenium', function (done) {
+gulp.task('selenium', done => {
   selenium.install({
     drivers: {},
     logger: function () { }
-  }, function (installErr) {
+  }, installErr => {
     if (installErr) { return done(installErr); }
     selenium.start({
       drivers: {}
-    }, function (startErr, child) {
+    }, (startErr, child) => {
       if (startErr) { return done(startErr); }
       if (process.env.TRAVIS) {
-        child.stderr.on('data', function(data){
+        child.stderr.on('data', data => {
           console.log(data.toString());
         });
       }
@@ -37,20 +37,20 @@ gulp.task('selenium', function (done) {
   });
 });
 
-gulp.task('integration', ['serve:test', 'selenium'], function () {
+gulp.task('integration', ['serve:test', 'selenium'], () => {
   return gulp.src('test/spec/**/*.js', {read: false})
     .pipe($.mocha({timeout: 10000}))
-    .once('error', function () {
+    .once('error', () => {
       process.env.MOCHA_ERR = true;
     })
-    .once('end', function () {
+    .once('end', () => {
       if (process.env.MOCHA_ERR) {
         throw new Error();
       }
     });
 });
 
-gulp.task('test', ['integration'], function () {
+gulp.task('test', ['integration'], () => {
   global.client.end();
   selenium.child.kill();
   server.exit();

@@ -9,6 +9,6 @@ import 'fontfaceobserver';
 // don't use if you're not loading any web fonts
 new FontFaceObserver('Open Sans')
   .check()
-  .then(function () {
+  .then(() => {
     // loaded
   });

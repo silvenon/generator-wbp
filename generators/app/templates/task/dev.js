@@ -12,7 +12,7 @@ gulp.task('connect:dev', ['scripts', 'styles'], done => {
   }, done);
 });
 
-gulp.task('watch:dev', ['connect:dev'], function () {
+gulp.task('watch:dev', ['connect:dev'], () => {
   gulp.watch([
     'app/index.html',
     'app/images/**/*'

@@ -22,7 +22,7 @@ if (process.env.GULP_ENV !== 'production') {
   b = watchify(b);
 }
 
-const bundle = function () {
+function bundle() {
   return b.bundle()
     .on('error', msg => {
       delete msg.stream;
