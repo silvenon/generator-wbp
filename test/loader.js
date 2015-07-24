@@ -39,18 +39,12 @@ describe('loader', () => {
         .on('end', done);
     });
 
-    it('doesn\'t create files', () => {
+    it('does none of that stuff', () => {
       assert.noFile([
         'app/styles/vendor/_loaders.scss',
         'app/scripts/components/loader.jsx'
       ]);
-    });
-
-    it('doesn\'t load the stylesheet', () => {
       assert.noFileContent('app/styles/app.scss', 'vendor/loaders');
-    });
-
-    it('doesn\'t style the loader', () => {
       assert.noFileContent('app/index.html', '.loader');
     });
   });

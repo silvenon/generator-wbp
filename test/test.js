@@ -36,6 +36,10 @@ describe('test', () => {
         .filter(file => file.match(/\.jsx$/))
         .forEach(file => assert.noFileContent(file, "'react'"));
     });
+
+    it('doesn\'t install PhantomJS v2 on Travis CI', () => {
+      assert.fileContent('.travis.yml', 'phantomjs');
+    });
   });
 
   describe('without React', () => {
