@@ -5,7 +5,6 @@ import del from 'del';
 
 gulp.task('html', ['scripts', 'styles'], () => {
   gulp.src('app/index.html')
-    .pipe($.minifyHtml({conditionals: true, loose: true}))
     .pipe(gulp.dest('dist'));
 
   return gulp.src([
