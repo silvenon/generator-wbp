@@ -1,10 +1,13 @@
 import gulp from 'gulp';
-import $ from './helpers/plugins';
-import {test as server} from './helpers/server';
+import loadPlugins from 'gulp-load-plugins';
+import browserSync from 'browser-sync';
 import selenium from 'selenium-standalone';
 
+const $ = loadPlugins();
+const bs = browserSync.create();
+
 gulp.task('serve:test', ['styles'], done => {
-  server.init({
+  bs.init({
     logLevel: 'silent',
     notify: false,
     open: false,
@@ -53,5 +56,5 @@ gulp.task('integration', ['serve:test', 'selenium'], () => {
 gulp.task('test', ['integration'], () => {
   global.client.end();
   selenium.child.kill();
-  server.exit();
+  bs.exit();
 });

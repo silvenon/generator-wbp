@@ -1,7 +1,10 @@
 import gulp from 'gulp';
-import $ from './helpers/plugins';
-import {prod as server} from './helpers/server';
+import loadPlugins from 'gulp-load-plugins';
+import browserSync from 'browser-sync';
 import del from 'del';
+
+const $ = loadPlugins();
+const bs = browserSync.create();
 
 gulp.task('html', ['scripts', 'styles'], () => {
   gulp.src('app/index.html')
@@ -12,8 +15,20 @@ gulp.task('html', ['scripts', 'styles'], () => {
     '.tmp/styles/*.css'
   ], {base: '.tmp'})
     .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
+    .pipe($.if('*.css', $.minifyCss()))
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('images', () => {
+  return gulp.src('app/images/**/*')
+    .pipe($.cache($.imagemin({
+      progressive: true,
+      interlaced: true,
+      // don't remove IDs from SVGs, they are often used
+      // as hooks for embedding and styling
+      svgoPlugins: [{cleanupIDs: false}]
+    })))
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('extras', () => {
@@ -25,7 +40,7 @@ gulp.task('extras', () => {
 });
 
 gulp.task('serve:dist', done => {
-  server.init({
+  bs.init({
     notify: false,
     port: 9000,
     server: {

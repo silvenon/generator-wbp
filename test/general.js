@@ -15,11 +15,6 @@ describe('general', () => {
     assert.file([
       'package.json',
       'gulpfile.babel.js',
-      'task/helpers/server.js',
-      'task/helpers/plugins.js',
-      'task/scripts.js',
-      'task/styles.js',
-      'task/images.js',
       'task/dev.js',
       'task/prod.js',
       'app/favicon.ico',

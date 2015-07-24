@@ -43,11 +43,6 @@ module.exports = generators.Base.extend({
 
     tasks: function () {
       [
-        'helpers/plugins.js',
-        'helpers/server.js',
-        'scripts.js',
-        'styles.js',
-        'images.js',
         'dev.js',
         'prod.js'
       ].forEach(function (filePath) {

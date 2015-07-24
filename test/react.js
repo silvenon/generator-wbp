@@ -26,7 +26,7 @@ describe('react', () => {
     });
 
     it('uses correct extensions in the tasks', () => {
-      assert.fileContent('task/scripts.js', '.{js,jsx}');
+      assert.fileContent('task/dev.js', '.{js,jsx}');
     });
 
     it('adds correct HTML', () => {
@@ -55,8 +55,8 @@ describe('react', () => {
     });
 
     it('uses correct extensions in the tasks', () => {
-      assert.fileContent('task/scripts.js', '.js');
-      assert.noFileContent('task/scripts.js', 'jsx');
+      assert.fileContent('task/dev.js', '.js');
+      assert.noFileContent('task/dev.js', 'jsx');
     });
 
     it('adds correct HTML', () => {

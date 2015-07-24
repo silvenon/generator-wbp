@@ -29,6 +29,11 @@ describe('test', () => {
       assert.fileContent('package.json', '"mocha"');
       assert.fileContent('package.json', 'mocha test/spec');
       assert.file('test/mocha.opts');
+
+      assert.noFile('task/test.js');
+      assert.noFileContent('gulpfile.babel.js', 'task/test');
+      assert.noFileContent('package.json', '"gulp-mocha"');
+      assert.noFileContent('package.json', 'gulp test');
     });
 
     it('uses React with addons everywhere', () => {
@@ -38,7 +43,7 @@ describe('test', () => {
     });
 
     it('doesn\'t install PhantomJS v2 on Travis CI', () => {
-      assert.fileContent('.travis.yml', 'phantomjs');
+      assert.noFileContent('.travis.yml', 'phantomjs');
     });
   });
 
@@ -64,6 +69,10 @@ describe('test', () => {
       assert.fileContent('gulpfile.babel.js', 'task/test');
       assert.fileContent('package.json', '"gulp-mocha"');
       assert.fileContent('package.json', 'gulp test');
+
+      assert.noFileContent('package.json', '"mocha"');
+      assert.noFileContent('package.json', 'mocha test/spec');
+      assert.noFile('test/mocha.opts');
     });
 
     it('creates expected files', () => {

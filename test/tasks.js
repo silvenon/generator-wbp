@@ -9,36 +9,25 @@ describe('gulp tasks', () => {
       .on('end', done);
   });
 
-  it('contains script tasks', () => {
-    assert.fileContent('task/scripts.js', "gulp.task('scripts'");
-    assert.fileContent('task/scripts.js', "gulp.task('lint'");
-  });
-
-  it('contains style tasks', () => {
-    assert.fileContent('task/styles.js', "gulp.task('styles'");
-  });
-
-  it('contains image tasks', () => {
-    assert.fileContent('task/images.js', "gulp.task('images'");
-  });
-
   it('contains development tasks', () => {
+    assert.fileContent('task/dev.js', "gulp.task('scripts'");
+    assert.fileContent('task/dev.js', "gulp.task('lint'");
+    assert.fileContent('task/dev.js', "gulp.task('styles'");
     assert.fileContent('task/dev.js', "gulp.task('connect:dev'");
     assert.fileContent('task/dev.js', "gulp.task('watch:dev'");
     assert.fileContent('task/dev.js', "gulp.task('serve:dev'");
+    assert.fileContent('gulpfile.babel.js', 'task/dev');
   });
 
   it('contains production tasks', () => {
     assert.fileContent('task/prod.js', "gulp.task('html'");
+    assert.fileContent('task/prod.js', "gulp.task('images'");
     assert.fileContent('task/prod.js', "gulp.task('extras'");
     assert.fileContent('task/prod.js', "gulp.task('clean'");
     assert.fileContent('task/prod.js', "gulp.task('build'");
     assert.fileContent('task/prod.js', "gulp.task('default'");
     assert.fileContent('task/prod.js', "gulp.task('serve:dist'");
-  });
-
-  it('doesn\'t contain testing tasks', () => {
-    assert.noFile('task/test.js');
+    assert.fileContent('gulpfile.babel.js', 'task/prod');
   });
 
   describe('without React', () => {
@@ -56,6 +45,7 @@ describe('gulp tasks', () => {
       assert.fileContent('task/test.js', "gulp.task('selenium'");
       assert.fileContent('task/test.js', "gulp.task('integration'");
       assert.fileContent('task/test.js', "gulp.task('test'");
+      assert.fileContent('gulpfile.babel.js', 'task/test');
     });
   });
 });
