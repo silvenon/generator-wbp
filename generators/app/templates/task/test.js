@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import loadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
-import selenium from 'selenium-standalone';
 
 const $ = loadPlugins();
 const bs = browserSync.create();
@@ -19,42 +18,16 @@ gulp.task('serve:test', ['styles'], done => {
   }, done);
 });
 
-gulp.task('selenium', done => {
-  selenium.install({
-    drivers: {},
-    logger: function () { }
-  }, installErr => {
-    if (installErr) { return done(installErr); }
-    selenium.start({
-      drivers: {}
-    }, (startErr, child) => {
-      if (startErr) { return done(startErr); }
-      if (process.env.TRAVIS) {
-        child.stderr.on('data', data => {
-          console.log(data.toString());
-        });
-      }
-      selenium.child = child;
-      done();
-    });
-  });
-});
-
-gulp.task('integration', ['serve:test', 'selenium'], () => {
+gulp.task('integration', 'serve:test', () => {
   return gulp.src('test/spec/**/*.js', {read: false})
-    .pipe($.mocha({timeout: 10000}))
-    .once('error', () => {
-      process.env.MOCHA_ERR = true;
-    })
-    .once('end', () => {
-      if (process.env.MOCHA_ERR) {
-        throw new Error();
-      }
-    });
+    .pipe($.webdriver({
+      desiredCapabilities: {
+        browserName: 'phantomjs'
+      },
+      slow: 200 // integration tests are usually slower than unit tests
+    }));
 });
 
 gulp.task('test', ['integration'], () => {
-  global.client.end();
-  selenium.child.kill();
   bs.exit();
 });

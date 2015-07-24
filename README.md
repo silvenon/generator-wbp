@@ -26,11 +26,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [CSS loader] component for React
   * [Mocha] as the test framework
   * [jsdom] for React testing (with [TestUtils])
-
-If the React option is off, the generator falls back to Selenium testing:
-
-  * [selenium-standalone] for installing drivers and running the Selenium server
-  * [WebdriverIO] as Node.js bindings for Selenium ([more info][integration-testing] about the setup)
+  * [WebdriverIO] as Node.js bindings for Selenium ([more info][integration-testing] about the setup), only if the `React` option is off
 
 See the current [roadmap].
 

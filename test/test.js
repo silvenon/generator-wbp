@@ -16,11 +16,12 @@ describe('test', () => {
 
     it('adds expected dependencies', () => {
       assert.fileContent('package.json', 'jsdom');
+      assert.noFileContent('package.json', 'webdriver');
     });
 
     it('creates expected files', () => {
       assert.file('test/vendor/classList.js');
-      assert.file('test/helpers/common.js');
+      assert.noFileContent('test/helpers/common.js', 'browser');
       assert.file('test/spec/document.js');
       assert.file('test/spec/test.jsx');
     });
@@ -58,16 +59,14 @@ describe('test', () => {
     });
 
     it('adds expected dependencies', () => {
-      assert.fileContent('package.json', 'selenium-standalone');
-      assert.fileContent('package.json', 'webdriverio');
-      assert.fileContent('package.json', 'webdrivercss');
+      assert.fileContent('package.json', 'webdriver');
       assert.noFileContent('package.json', 'jsdom');
     });
 
     it('runs the tests with gulp', () => {
       assert.file('task/test.js');
       assert.fileContent('gulpfile.babel.js', 'task/test');
-      assert.fileContent('package.json', '"gulp-mocha"');
+      assert.fileContent('package.json', '"gulp-webdriver"');
       assert.fileContent('package.json', 'gulp test');
 
       assert.noFileContent('package.json', '"mocha"');
@@ -76,7 +75,7 @@ describe('test', () => {
     });
 
     it('creates expected files', () => {
-      assert.file('test/helpers/client.js');
+      assert.fileContent('test/helpers/common.js', 'browser');
       assert.file('test/fixtures/index.html');
       assert.file('test/spec/test.js');
       assert.noFile('test/spec/test.jsx');

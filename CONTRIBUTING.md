@@ -122,6 +122,7 @@ I'm open for convincing to move to [wd]. It seems to have a very similar goal, b
 [svg]: https://css-tricks.com/using-svg/
 [svg-vs-font]: https://css-tricks.com/icon-fonts-vs-svg/
 [svg-symbol]: https://css-tricks.com/svg-symbol-good-choice-icons/
+[jsdom]: https://github.com/tmpvar/jsdom
 [webdriverio]: http://webdriver.io/
 [webdriverjs]: https://code.google.com/p/selenium/wiki/WebDriverJs
 [wd]: https://github.com/admc/wd

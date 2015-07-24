@@ -152,14 +152,12 @@ module.exports = generators.Base.extend({
         files = [
           'mocha.opts',
           'vendor/classList.js',
-          'helpers/common.js',
           'spec/document.js',
           'spec/test.jsx'
         ];
       } else {
         files = [
           'fixtures/index.html',
-          'helpers/client.js',
           'spec/test.js'
         ];
       }
@@ -170,6 +168,14 @@ module.exports = generators.Base.extend({
           this.destinationPath('test/' + file)
         );
       }.bind(this));
+
+      this.fs.copyTpl(
+        this.templatePath('test/helpers/common.js'),
+        this.destinationPath('test/helpers/common.js'),
+        {
+          includeReact: this.props.includeReact
+        }
+      );
     },
 
     icons: function () {

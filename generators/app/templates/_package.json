@@ -41,9 +41,6 @@
     "gulp-imagemin": "^2.2.1",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-css": "^1.1.6",
-<% if (!includeReact) { -%>
-    "gulp-mocha": "^2.1.1",
-<% } -%>
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^5.1.8",
     "gulp-sass": "^2.0.1",
@@ -55,15 +52,13 @@
     "jsdom": "^3.1.2",
     "mocha": "^2.2.5",
 <% } else { -%>
-    "selenium-standalone": "^4.4.2",
+    "gulp-webdriver": "^0.1.1",
 <% } -%>
     "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.3"<% if (!includeReact) { %>,
-    "webdrivercss": "^1.1.3",
-    "webdriverio": "^2.4.5"<% } %>
+    "watchify": "^3.2.3"
   },
   "dependencies": {
     "es6-promise": "^2.3.0",

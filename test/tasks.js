@@ -42,7 +42,6 @@ describe('gulp tasks', () => {
 
     it('contains testing tasks', () => {
       assert.fileContent('task/test.js', "gulp.task('serve:test'");
-      assert.fileContent('task/test.js', "gulp.task('selenium'");
       assert.fileContent('task/test.js', "gulp.task('integration'");
       assert.fileContent('task/test.js', "gulp.task('test'");
       assert.fileContent('gulpfile.babel.js', 'task/test');

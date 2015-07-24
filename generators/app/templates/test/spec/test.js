@@ -1,11 +1,11 @@
-import client from '../helpers/client';
+import '../helpers/common';
 
 describe('suite', () => {
   before(() => {
-    return client.url('http://localhost:9000/index.html');
+    return browser.url('http://localhost:9000/index.html');
   });
 
   it('should have the correct page title', () => {
-    return client.getTitle().should.eventually.equal('Fixture');
+    return browser.getTitle().should.eventually.equal('Fixture');
   });
 });
