@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import loadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
+import autoprefixer from 'autoprefixer-core';
 
 const $ = loadPlugins();
 const bs = browserSync.create();
