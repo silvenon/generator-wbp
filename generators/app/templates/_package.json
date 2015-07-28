@@ -7,10 +7,11 @@
     "start": "GULP_ENV=development gulp serve:dev",
 <% if (includeReact) { -%>
     "test": "mocha test/spec",
+    "build": "npm test && GULP_ENV=production gulp",
 <% } else { -%>
     "test": "GULP_ENV=test gulp test",
-<% } -%>
     "build": "GULP_ENV=production gulp",
+<% } -%>
     "preview": "gulp serve:dist",
     "deploy": "aws --profile myprofile s3 sync dist s3://mybucket --region myregion"
   },
