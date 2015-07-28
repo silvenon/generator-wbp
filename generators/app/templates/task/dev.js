@@ -35,7 +35,7 @@ function bundle() {
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe(bs.stream({once: true}));
-};
+}
 
 gulp.task('scripts', bundle);
 b.on('update', bundle);
