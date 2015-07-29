@@ -13,7 +13,7 @@
     "build": "GULP_ENV=production gulp",
 <% } -%>
     "preview": "gulp serve:dist",
-    "deploy": "aws --profile myprofile s3 sync dist s3://mybucket --region myregion"
+    "deploy": "aws --profile myprofile s3 sync dist s3://mybucket --region myregion --delete"
   },
   "browser": {
     "fetch": "whatwg-fetch"
