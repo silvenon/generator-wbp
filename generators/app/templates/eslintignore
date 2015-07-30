@@ -1,1 +1,2 @@
-*/vendor
+app/scripts/vendor
+test/vendor
