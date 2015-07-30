@@ -57,7 +57,7 @@ const App = React.createClass({
 });
 
 const routes = (
-  <Route name="app" path="/" handler={App}>
+  <Route path="/" handler={App}>
     {/* routes */}
   </Route>
 );
