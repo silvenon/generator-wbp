@@ -45,7 +45,7 @@ describe('react', () => {
     });
 
     it('adds expected dependencies', () => {
-      assert.noFileContent('package.json', '"react"');
+      assert.noFileContent('package.json', 'react');
     });
 
     it('creates expected files', () => {
