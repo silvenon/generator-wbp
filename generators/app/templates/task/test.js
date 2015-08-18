@@ -18,7 +18,7 @@ gulp.task('serve:test', ['styles'], done => {
   }, done);
 });
 
-gulp.task('integration', 'serve:test', () => {
+gulp.task('integration', ['serve:test'], () => {
   return gulp.src('test/spec/**/*.js', {read: false})
     .pipe($.webdriver({
       desiredCapabilities: {
