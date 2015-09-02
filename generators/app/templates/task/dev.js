@@ -73,6 +73,8 @@ gulp.task('connect:dev', ['scripts', 'styles'], done => {
     port: 9000,
     open: false,
     server: {
+      // the order is important, this way files in .tmp
+      // will get precedence in case of a name clash
       baseDir: ['.tmp', 'app']
     }
   }, done);
