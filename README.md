@@ -102,7 +102,7 @@ This script needs to be adjusted according to your S3 data, or replace it with a
 
 ## Contributing
 
-See the [contributing docs](CONTRIBUTING.md), interesting stuff.
+See the [contributing docs](contributing.md), interesting stuff.
 
 ## License
 
