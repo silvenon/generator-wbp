@@ -1,33 +1,41 @@
 import gulp from 'gulp';
-import loadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
+import http from 'http';
+import connect from 'connect';
+import serveStatic from 'serve-static';
+import selenium from 'selenium-standalone';
+import {spawn} from 'child_process';
 
-const $ = loadPlugins();
-const bs = browserSync.create();
+let httpServer, seleniumServer;
 
 gulp.task('serve:test', ['styles'], done => {
-  bs.init({
-    logLevel: 'silent',
-    notify: false,
-    open: false,
-    port: 9000,
-    server: {
-      baseDir: ['test/fixtures', 'dist']
-    },
-    ui: false
-  }, done);
+  const app = connect()
+    .use(serveStatic('test/fixtures'))
+    .use(serveStatic('dist'));
+
+  httpServer = http.createServer(app);
+  httpServer.listen(9000, done);
 });
 
-gulp.task('integration', ['serve:test'], () => {
-  return gulp.src('test/spec/**/*.js', {read: false})
-    .pipe($.webdriver({
-      desiredCapabilities: {
-        browserName: 'phantomjs'
-      },
-      slow: 200 // integration tests are usually slower than unit tests
-    }));
+gulp.task('selenium', done => {
+  selenium.install(installErr => {
+    if (installErr) { return done(installErr); }
+    selenium.start((startErr, child) => {
+      if (startErr) { return done(startErr); }
+      seleniumServer = child;
+      done();
+    });
+  });
+});
+
+gulp.task('integration', ['serve:test', 'selenium'], done => {
+  spawn('node_modules/.bin/wdio', {
+    stdio: 'inherit'
+  }).on('exit', code => {
+    done();
+  });
 });
 
 gulp.task('test', ['integration'], () => {
-  bs.exit();
+  httpServer.close();
+  seleniumServer.kill();
 });

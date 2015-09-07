@@ -39,7 +39,7 @@ But I found it too advanced for me and it was starting to get in the way, so I s
 
 ### [webpack]
 
-I still haven't tried webpack, though, I hear nice things about it.
+I still haven't tried webpack, but I hear nice things about it.
 
 ## [Bootstrap]
 
@@ -94,8 +94,6 @@ The method that worked best for me is `<symbol>` + `<use>`, read more about it [
 
 It's more advanced, has nicer API and is better-documented than [WebdriverJS].
 
-I'm open for convincing to move to [wd]. It seems to have a very similar goal, but with a different API. I haven't tried it for real yet.
-
 [gulp]: http://gulpjs.com/
 [grunt]: http://gruntjs.com/
 [1st guideline]: https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md#guidelines
@@ -125,4 +123,3 @@ I'm open for convincing to move to [wd]. It seems to have a very similar goal, b
 [jsdom]: https://github.com/tmpvar/jsdom
 [webdriverio]: http://webdriver.io/
 [webdriverjs]: https://code.google.com/p/selenium/wiki/WebDriverJs
-[wd]: https://github.com/admc/wd

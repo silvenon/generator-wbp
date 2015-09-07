@@ -16,24 +16,29 @@ describe('test', () => {
 
     it('adds expected dependencies', () => {
       assert.fileContent('package.json', 'jsdom');
-      assert.noFileContent('package.json', 'webdriver');
+      assert.noFileContent('package.json', 'webdriverio');
+      assert.noFileContent('package.json', 'selenium-standalone');
+      assert.noFileContent('package.json', 'connect');
+      assert.noFileContent('package.json', 'serve-static');
     });
 
     it('creates expected files', () => {
       assert.file('test/vendor/classList.js');
-      assert.noFileContent('test/helpers/common.js', 'browser');
       assert.file('test/spec/document.js');
       assert.file('test/spec/test.jsx');
+      assert.file('test/helpers/common.js');
+      assert.noFile('wdio.conf.js');
+    });
+
+    it('doesn\'t set the browser global in ESLint', () => {
+      assert.noFileContent('.eslintrc', 'globals');
     });
 
     it('runs the tests with Mocha CLI', () => {
-      assert.fileContent('package.json', '"mocha"');
       assert.fileContent('package.json', 'mocha test/spec');
       assert.file('test/mocha.opts');
-
       assert.noFile('task/test.js');
       assert.noFileContent('gulpfile.babel.js', 'task/test');
-      assert.noFileContent('package.json', '"gulp-mocha"');
       assert.noFileContent('package.json', 'gulp test');
     });
 
@@ -59,26 +64,31 @@ describe('test', () => {
     });
 
     it('adds expected dependencies', () => {
-      assert.fileContent('package.json', 'webdriver');
+      assert.fileContent('package.json', 'webdriverio');
+      assert.fileContent('package.json', 'selenium-standalone');
+      assert.fileContent('package.json', 'connect');
+      assert.fileContent('package.json', 'serve-static');
       assert.noFileContent('package.json', 'jsdom');
+    });
+
+    it('creates expected files', () => {
+      assert.file('wdio.conf.js');
+      assert.file('test/fixtures/index.html');
+      assert.file('test/spec/test.js');
+      assert.noFile('test/helpers/common.js');
+      assert.noFile('test/spec/test.jsx');
+    });
+
+    it('sets the browser global in ESLint', () => {
+      assert.fileContent('.eslintrc', 'globals');
     });
 
     it('runs the tests with gulp', () => {
       assert.file('task/test.js');
       assert.fileContent('gulpfile.babel.js', 'task/test');
-      assert.fileContent('package.json', '"gulp-webdriver"');
       assert.fileContent('package.json', 'gulp test');
-
-      assert.noFileContent('package.json', '"mocha"');
       assert.noFileContent('package.json', 'mocha test/spec');
       assert.noFile('test/mocha.opts');
-    });
-
-    it('creates expected files', () => {
-      assert.fileContent('test/helpers/common.js', 'browser');
-      assert.file('test/fixtures/index.html');
-      assert.file('test/spec/test.js');
-      assert.noFile('test/spec/test.jsx');
     });
 
     it('installs PhantomJS v2 on Travis CI', () => {

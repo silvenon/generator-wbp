@@ -166,32 +166,26 @@ module.exports = generators.Base.extend({
 
       if (this.props.includeReact) {
         files = [
-          'mocha.opts',
-          'vendor/classList.js',
-          'spec/document.js',
-          'spec/test.jsx'
+          'test/mocha.opts',
+          'test/helpers/common.js',
+          'test/vendor/classList.js',
+          'test/spec/document.js',
+          'test/spec/test.jsx'
         ];
       } else {
         files = [
-          'fixtures/index.html',
-          'spec/test.js'
+          'wdio.conf.js',
+          'test/fixtures/index.html',
+          'test/spec/test.js'
         ];
       }
 
       files.forEach(function (file) {
         this.fs.copy(
-          this.templatePath('test/' + file),
-          this.destinationPath('test/' + file)
+          this.templatePath(file),
+          this.destinationPath(file)
         );
       }.bind(this));
-
-      this.fs.copyTpl(
-        this.templatePath('test/helpers/common.js'),
-        this.destinationPath('test/helpers/common.js'),
-        {
-          includeReact: this.props.includeReact
-        }
-      );
     },
 
     icons: function () {

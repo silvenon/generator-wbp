@@ -5,6 +5,10 @@
   "plugins": [
     "react"
   ],
+<% } else { -%>
+  "globals": {
+    "browser": false
+  },
 <% } -%>
 
   "env": {

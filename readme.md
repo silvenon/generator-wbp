@@ -142,7 +142,7 @@ MIT © Matija Marohnić
 [mocha]: http://mochajs.org/
 [jsdom]: https://github.com/tmpvar/jsdom
 [testutils]: https://facebook.github.io/react/docs/test-utils.html
-[webdriverio]: https://github.com/webdriverio/gulp-webdriver
+[webdriverio]: http://webdriver.io/
 [roadmap]: https://github.com/silvenon/generator-wbp/labels/enhancement
 [yo]: https://github.com/yeoman/yo
 [package.json]: generators/app/templates/_package.json

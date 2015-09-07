@@ -112,7 +112,7 @@ This script needs to be adjusted according to your S3 data, or replace it with a
 <% if (includeReact) { -%>
 [testutils]: https://facebook.github.io/react/docs/test-utils.html
 <% } else { -%>
-[webdriverio]: https://github.com/webdriverio/gulp-webdriver
+[webdriverio]: http://webdriver.io/
 <% } -%>
 [package.json]: package.json
 [aws cli]: http://aws.amazon.com/cli/

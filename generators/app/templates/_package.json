@@ -34,6 +34,9 @@
     "browserify-shim": "^3.8.10",
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
+<% if (!includeReact) { -%>
+    "connect": "^3.4.0",
+<% } -%>
     "del": "^1.2.0",
     "eslint": "^0.23.0",
 <% if (includeReact) { -%>
@@ -55,16 +58,19 @@
     "gulp-util": "^3.0.5",
 <% if (includeReact) { -%>
     "jsdom": "^3.1.2",
-    "mocha": "^2.2.5",
-<% } else { -%>
-    "gulp-webdriver": "^0.1.1",
 <% } -%>
+    "mocha": "^2.2.5",
     "postcss-flexbugs-fixes": "^1.0.0",
+<% if (!includeReact) { -%>
+    "selenium-standalone": "^4.6.0",
+    "serve-static": "^1.10.0",
+<% } -%>
     "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.3"
+    "watchify": "^3.2.3"<% if (!includeReact) { %>,
+    "webdriverio": "^3.2.1"<% } %>
   },
   "dependencies": {
     "es6-promise": "^2.3.0",
