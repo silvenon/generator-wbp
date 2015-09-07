@@ -30,7 +30,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [CSS loader] component for React
   * [Mocha] as the test framework
   * [jsdom] for React testing (with [TestUtils])
-  * [WebdriverIO] as Node.js bindings for Selenium ([more info][integration-testing] about the setup), only if the `React` option is off
+  * [WebdriverIO] as Node.js bindings for Selenium (only if the `React` option is off)
 
 See the current [roadmap].
 
@@ -139,12 +139,10 @@ MIT © Matija Marohnić
 [svg-symbol]: https://css-tricks.com/svg-symbol-good-choice-icons/
 [svg4everybody]: https://github.com/jonathantneal/svg4everybody
 [css loader]: http://connoratherton.com/loaders
-[selenium-standalone]: https://github.com/vvo/selenium-standalone
 [mocha]: http://mochajs.org/
 [jsdom]: https://github.com/tmpvar/jsdom
 [testutils]: https://facebook.github.io/react/docs/test-utils.html
-[webdriverio]: http://webdriver.io/
-[integration-testing]: http://twin.github.io/selenium-testing-workflow-with-webdriverio/
+[webdriverio]: https://github.com/webdriverio/gulp-webdriver
 [roadmap]: https://github.com/silvenon/generator-wbp/labels/enhancement
 [yo]: https://github.com/yeoman/yo
 [package.json]: generators/app/templates/_package.json
