@@ -32,6 +32,11 @@ describe('react', () => {
     it('adds correct HTML', () => {
       assert.fileContent('app/index.html', 'id="content"');
     });
+
+    it('adds the correct docs', () => {
+      assert.fileContent('readme.md', /React/i);
+      assert.noFileContent('readme.md', /WebdriverIO/i);
+    });
   });
 
   describe('off', () => {
@@ -61,6 +66,11 @@ describe('react', () => {
 
     it('adds correct HTML', () => {
       assert.fileContent('app/index.html', 'class="container"');
+    });
+
+    it('adds the correct docs', () => {
+      assert.noFileContent('readme.md', /React/i);
+      assert.fileContent('readme.md', /WebdriverIO/i);
     });
   });
 });

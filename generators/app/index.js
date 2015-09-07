@@ -35,6 +35,16 @@ module.exports = generators.Base.extend({
   },
 
   writing: {
+    docs: function () {
+      this.fs.copyTpl(
+        this.templatePath('readme.md'),
+        this.destinationPath('readme.md'),
+        {
+          includeReact: this.props.includeReact
+        }
+      );
+    },
+
     npm: function () {
       this.fs.copyTpl(
         this.templatePath('_package.json'),
