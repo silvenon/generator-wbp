@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import loadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
+import flexbugs from 'postcss-flexbugs-fixes';
 import autoprefixer from 'autoprefixer-core';
 
 const $ = loadPlugins();
@@ -61,7 +62,10 @@ gulp.task('styles', () => {
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass.sync()).on('error', $.sass.logError)
-    .pipe($.postcss([autoprefixer]))
+    .pipe($.postcss([
+      flexbugs,
+      autoprefixer
+    ]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(bs.stream());

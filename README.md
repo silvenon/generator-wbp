@@ -17,7 +17,8 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [ESLint] for JS & JSX linting (if you are using [Atom], I highly recommend [linter-eslint])
   * [Sass] for CSS pre-processing (using [libsass])
   * [PostCSS] for CSS post-processing, with the following plugins:
-    - [Autoprefixer] for adding vendor prefixes
+    - [postcss-flexbugs-fixes] for fixing some of the [flexbugs]
+    - [autoprefixer] for adding vendor prefixes
     - easily include more [PostCSS plugins]
   * JS & CSS [sourcemaps]
   * [Normalize.css] for normalizing styles across browsers
@@ -120,6 +121,8 @@ MIT © Matija Marohnić
 [sass]: http://sass-lang.com/
 [libsass]: http://libsass.org/
 [postcss]: https://github.com/postcss/postcss
+[postcss-flexbugs-fixes]: https://github.com/luisrudge/postcss-flexbugs-fixes
+[flexbugs]: https://github.com/philipwalton/flexbugs
 [autoprefixer]: https://github.com/postcss/autoprefixer
 [postcss plugins]: https://github.com/postcss/postcss#plugins
 [sourcemaps]: http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/

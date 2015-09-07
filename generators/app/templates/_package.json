@@ -57,6 +57,7 @@
 <% } else { -%>
     "gulp-webdriver": "^0.1.1",
 <% } -%>
+    "postcss-flexbugs-fixes": "^1.0.0",
     "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0",
     "vinyl-buffer": "^1.0.0",
