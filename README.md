@@ -68,7 +68,7 @@ There are some shortcut scripts in the [package.json] that you can run [using np
 
 **Side note**: I'm not entirely sure that it's ok to use npm scripts this way, but we're not going to be publishing the generated "package" (which is why `private` is set to `true`), so we might as well abuse them.
 
-Start the local server at http://localhost:9000 and watch files for changes:
+Start the local server at [http://localhost:9000](http://localhost:9000) and watch files for changes:
 
 ```sh
 ❯ npm start
