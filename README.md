@@ -7,7 +7,10 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
 ## Features
 
   * [gulp] for running tasks
-  * [browserify] for loading node modules on the front-end (uses [Babel])
+  * [browserify] for loading node modules on the front-end, with the following plugins:
+    - [babelify] for transforming JavaScript with [Babel]
+    - [browserify-shim] for shimming scripts which don't follow a module pattern
+    - easily include more [browserify plugins]
   * [BrowserSync] for running the local server (it's loaded with features)
   * [React] (optional) for managing views, with the following plugins:
     - [React Router] for managing routes
@@ -109,7 +112,10 @@ MIT © Matija Marohnić
 [generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
 [gulp]: http://gulpjs.com/
 [browserify]: http://browserify.org/
+[babelify]: https://github.com/babel/babelify
 [babel]: https://babeljs.io/
+[browserify-shim]: https://github.com/thlorenz/browserify-shim
+[browserify plugins]: https://github.com/substack/node-browserify/wiki/list-of-transforms
 [browsersync]: http://www.browsersync.io/
 [react]: https://facebook.github.io/react/
 [react router]: http://rackt.github.io/react-router/
