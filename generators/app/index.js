@@ -3,6 +3,10 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = generators.Base.extend({
+  initializing: function () {
+    this.pkg = require('../../package.json');
+  },
+
   prompting: function () {
     var done = this.async();
 
@@ -66,7 +70,9 @@ module.exports = generators.Base.extend({
         this.templatePath('gulpfile.babel.js'),
         this.destinationPath('gulpfile.babel.js'),
         {
-          includeReact: this.props.includeReact
+          name: this.pkg.name,
+          version: this.pkg.version,
+          includeReact: this.props.includeReact,
         }
       );
     },

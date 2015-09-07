@@ -9,6 +9,10 @@ describe('gulp tasks', () => {
       .on('end', done);
   });
 
+  it('contains the info about the generator', () => {
+    assert.fileContent('gulpfile.babel.js', 'generator-wbp');
+  });
+
   it('contains development tasks', () => {
     assert.fileContent('task/dev.js', "gulp.task('scripts'");
     assert.fileContent('task/dev.js', "gulp.task('lint'");
