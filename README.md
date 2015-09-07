@@ -9,7 +9,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [gulp] for running tasks
   * [browserify] for loading node modules on the front-end (uses [Babel])
   * [BrowserSync] for running the local server (it's loaded with features)
-  * [React] for managing views, with the following plugins:
+  * [React] (optional) for managing views, with the following plugins:
     - [React Router] for managing routes
     - [React Portal] for handling things like modals
   * [Fetch API polyfill] wrapped as a convenience helper
