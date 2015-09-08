@@ -14,7 +14,8 @@ describe('Icon', () => {
         role="img"
         title="Heart"
         width="100"
-        height="100" />
+        height="100"
+      />
     );
     const icon = React.findDOMNode(el);
     const use = icon.querySelector('use');

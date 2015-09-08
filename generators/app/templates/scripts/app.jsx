@@ -45,7 +45,7 @@ const App = React.createClass({
     } else {
       content = (
         <div className="container">
-          <h1>You look <strong>great</strong> today!</h1>
+          <h1>{'You look'} <strong>{'great'}</strong> {'today!'}</h1>
           <Icon symbol="heart" role="presentation" />
           <RouteHandler />
         </div>

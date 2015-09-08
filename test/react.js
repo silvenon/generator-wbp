@@ -25,6 +25,11 @@ describe('react', () => {
       assert.noFile('app/scripts/app.js');
     });
 
+    it('sets the correct ESLint options', () => {
+      assert.fileContent('.eslintrc', 'jsx');
+      assert.noFileContent('.eslintrc', 'globals');
+    });
+
     it('uses correct extensions in the tasks', () => {
       assert.fileContent('task/dev.js', '.{js,jsx}');
     });
@@ -57,6 +62,11 @@ describe('react', () => {
       assert.file('app/scripts/app.js');
       assert.noFile('app/scripts/components/icon.jsx');
       assert.noFile('app/scripts/app.jsx');
+    });
+
+    it('sets the correct ESLint options', () => {
+      assert.fileContent('.eslintrc', 'globals');
+      assert.noFileContent('.eslintrc', 'jsx');
     });
 
     it('uses correct extensions in the tasks', () => {

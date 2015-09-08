@@ -30,10 +30,6 @@ describe('test', () => {
       assert.noFile('wdio.conf.js');
     });
 
-    it('doesn\'t set the browser global in ESLint', () => {
-      assert.noFileContent('.eslintrc', 'globals');
-    });
-
     it('runs the tests with Mocha CLI', () => {
       assert.fileContent('package.json', 'mocha test/spec');
       assert.file('test/mocha.opts');
@@ -77,10 +73,6 @@ describe('test', () => {
       assert.file('test/spec/test.js');
       assert.noFile('test/helpers/common.js');
       assert.noFile('test/spec/test.jsx');
-    });
-
-    it('sets the browser global in ESLint', () => {
-      assert.fileContent('.eslintrc', 'globals');
     });
 
     it('runs the tests with gulp', () => {
