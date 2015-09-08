@@ -7,7 +7,7 @@ import {spawn} from 'child_process';
 
 let httpServer, seleniumServer;
 
-gulp.task('serve:test', ['styles'], done => {
+gulp.task('serve:test', ['styles'], (done) => {
   const app = connect()
     .use(serveStatic('test/fixtures'))
     .use(serveStatic('dist'));
@@ -16,8 +16,8 @@ gulp.task('serve:test', ['styles'], done => {
   httpServer.listen(9000, done);
 });
 
-gulp.task('selenium', done => {
-  selenium.install(installErr => {
+gulp.task('selenium', (done) => {
+  selenium.install((installErr) => {
     if (installErr) { return done(installErr); }
     selenium.start((startErr, child) => {
       if (startErr) { return done(startErr); }
@@ -27,10 +27,10 @@ gulp.task('selenium', done => {
   });
 });
 
-gulp.task('integration', ['serve:test', 'selenium'], done => {
+gulp.task('integration', ['serve:test', 'selenium'], (done) => {
   spawn('node_modules/.bin/wdio', {
     stdio: 'inherit'
-  }).on('exit', code => {
+  }).on('exit', (code) => {
     done();
   });
 });

@@ -3,7 +3,7 @@ import {test as helpers} from 'yeoman-generator';
 import assert from 'yeoman-assert';
 
 describe('gulp tasks', () => {
-  before(done => {
+  before((done) => {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withOptions({skipInstall: true})
       .on('end', done);
@@ -35,7 +35,7 @@ describe('gulp tasks', () => {
   });
 
   describe('without React', () => {
-    before(done => {
+    before((done) => {
       helpers.run(path.join(__dirname, '../generators/app'))
         .withOptions({skipInstall: true})
         .withPrompts({

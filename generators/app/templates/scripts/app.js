@@ -5,6 +5,6 @@ import './fonts';
 
 console.log('Hello World');
 
-fetch('/index.html').then(res => {
+fetch('/index.html').then((res) => {
   console.log(res);
 });

@@ -5,7 +5,7 @@ import assert from 'yeoman-assert';
 
 describe('test', () => {
   describe('with React', () => {
-    before(done => {
+    before((done) => {
       helpers.run(path.join(__dirname, '../generators/app'))
         .withOptions({skipInstall: true})
         .withPrompts({
@@ -44,8 +44,8 @@ describe('test', () => {
 
     it('uses React with addons everywhere', () => {
       shell.find(['app/scripts', 'test'])
-        .filter(file => file.match(/\.jsx$/))
-        .forEach(file => assert.noFileContent(file, "'react'"));
+        .filter((file) => file.match(/\.jsx$/))
+        .forEach((file) => assert.noFileContent(file, "'react'"));
     });
 
     it('doesn\'t install PhantomJS v2 on Travis CI', () => {
@@ -54,7 +54,7 @@ describe('test', () => {
   });
 
   describe('without React', () => {
-    before(done => {
+    before((done) => {
       helpers.run(path.join(__dirname, '../generators/app'))
         .withOptions({skipInstall: true})
         .withPrompts({

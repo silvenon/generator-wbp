@@ -39,7 +39,7 @@ gulp.task('extras', () => {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('serve:dist', done => {
+gulp.task('serve:dist', (done) => {
   bs.init({
     notify: false,
     port: 9000,

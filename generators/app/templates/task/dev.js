@@ -29,7 +29,7 @@ if (process.env.GULP_ENV !== 'production') {
 
 function bundle() {
   return b.bundle()
-    .on('error', msg => {
+    .on('error', (msg) => {
       delete msg.stream;
       $.util.log(msg);
     })
@@ -71,7 +71,7 @@ gulp.task('styles', () => {
     .pipe(bs.stream());
 });
 
-gulp.task('connect:dev', ['scripts', 'styles'], done => {
+gulp.task('connect:dev', ['scripts', 'styles'], (done) => {
   bs.init({
     notify: false,
     port: 9000,

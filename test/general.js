@@ -5,7 +5,7 @@ import assert from 'yeoman-assert';
 import jsonlint from 'jsonlint';
 
 describe('general', () => {
-  before(done => {
+  before((done) => {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withOptions({skipInstall: true})
       .on('end', done);
