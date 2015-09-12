@@ -80,6 +80,9 @@ exports.config = {
   // Jasmine: `$ npm install jasmine`
   // Cucumber: `$ npm install cucumber`
   framework: 'mocha',
+  mochaOpts: {
+    compilers: ['js:babel-core/register']
+  },
   //
   // Test reporter for stdout.
   // The following are supported: dot (default), spec and xunit

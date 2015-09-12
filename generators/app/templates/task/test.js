@@ -1,10 +1,11 @@
 import gulp from 'gulp';
+import loadPlugins from 'gulp-load-plugins';
 import http from 'http';
 import connect from 'connect';
 import serveStatic from 'serve-static';
 import selenium from 'selenium-standalone';
-import {spawn} from 'child_process';
 
+const $ = loadPlugins();
 let httpServer, seleniumServer;
 
 gulp.task('serve:test', ['styles'], (done) => {
@@ -16,23 +17,21 @@ gulp.task('serve:test', ['styles'], (done) => {
   httpServer.listen(9000, done);
 });
 
-gulp.task('selenium', (done) => {
-  selenium.install((installErr) => {
-    if (installErr) { return done(installErr); }
-    selenium.start((startErr, child) => {
-      if (startErr) { return done(startErr); }
-      seleniumServer = child;
-      done();
-    });
+gulp.task('drivers', (done) => {
+  selenium.install(done);
+});
+
+gulp.task('selenium', ['drivers'], (done) => {
+  selenium.start((err, child) => {
+    if (err) { return done(err); }
+    seleniumServer = child;
+    done();
   });
 });
 
 gulp.task('integration', ['serve:test', 'selenium'], (done) => {
-  spawn('node_modules/.bin/wdio', {
-    stdio: 'inherit'
-  }).on('exit', (code) => {
-    done();
-  });
+  return gulp.src('wdio.conf.js')
+    .pipe($.webdriver());
 });
 
 gulp.task('test', ['integration'], () => {

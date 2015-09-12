@@ -16,7 +16,7 @@ describe('test', () => {
 
     it('adds expected dependencies', () => {
       assert.fileContent('package.json', 'jsdom');
-      assert.noFileContent('package.json', 'webdriverio');
+      assert.noFileContent('package.json', 'webdriver');
       assert.noFileContent('package.json', 'selenium-standalone');
       assert.noFileContent('package.json', 'connect');
       assert.noFileContent('package.json', 'serve-static');
@@ -60,7 +60,7 @@ describe('test', () => {
     });
 
     it('adds expected dependencies', () => {
-      assert.fileContent('package.json', 'webdriverio');
+      assert.fileContent('package.json', 'webdriver');
       assert.fileContent('package.json', 'selenium-standalone');
       assert.fileContent('package.json', 'connect');
       assert.fileContent('package.json', 'serve-static');

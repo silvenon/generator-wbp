@@ -58,6 +58,8 @@
     "gulp-util": "^3.0.5",
 <% if (includeReact) { -%>
     "jsdom": "^3.1.2",
+<% } else { -%>
+    "gulp-webdriver": "^1.0.1",
 <% } -%>
     "mocha": "^2.2.5",
     "postcss-flexbugs-fixes": "^1.0.0",
@@ -69,8 +71,7 @@
     "sinon-chai": "^2.8.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.3"<% if (!includeReact) { %>,
-    "webdriverio": "^3.2.1"<% } %>
+    "watchify": "^3.2.3"
   },
   "dependencies": {
     "es6-promise": "^2.3.0",

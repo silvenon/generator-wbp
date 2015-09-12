@@ -17,9 +17,9 @@ This project was scaffolded with [generator-wbp].
 <% } -%>
   * [Fetch API polyfill] wrapped as a convenience helper
   * [FontFaceObserver] for [reducing FOIT][font-events] when using webfonts
-  * [ESLint] for JS & JSX linting, with the following plugins:
+  * [ESLint] for JS & JSX linting<% if (includeReact) { %>, with the following plugins:
     - [eslint-plugin-react] for fine-grained React-savvy JSX linting
-    - easily include more [ESLint plugins]
+    - easily include more [ESLint plugins]<% } %>
   * [Sass] for CSS pre-processing (using [libsass])
   * [PostCSS] for CSS post-processing, with the following plugins:
     - [postcss-flexbugs-fixes] for fixing some of the [flexbugs]
@@ -94,8 +94,10 @@ This script needs to be adjusted according to your S3 data, or replace it with a
 [fontfaceobserver]: https://github.com/bramstein/fontfaceobserver
 [font-events]: http://www.filamentgroup.com/lab/font-events.html
 [eslint]: http://eslint.org/
+<% if (includeReact) { -%>
 [eslint-plugin-react]: https://github.com/yannickcr/eslint-plugin-react
 [eslint-plugins]: https://github.com/search?q=eslint-plugin&ref=opensearch
+<% } -%>
 [sass]: http://sass-lang.com/
 [libsass]: http://libsass.org/
 [postcss]: https://github.com/postcss/postcss
