@@ -97,7 +97,7 @@ This script needs to be adjusted according to your S3 data, or replace it with a
 [eslint]: http://eslint.org/
 <% if (includeReact) { -%>
 [eslint-plugin-react]: https://github.com/yannickcr/eslint-plugin-react
-[eslint-plugins]: https://github.com/search?q=eslint-plugin&ref=opensearch
+[eslint plugins]: https://github.com/search?q=eslint-plugin&ref=opensearch
 <% } -%>
 [sass]: http://sass-lang.com/
 [libsass]: http://libsass.org/

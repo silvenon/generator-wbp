@@ -128,7 +128,7 @@ MIT © Matija Marohnić
 [font-events]: http://www.filamentgroup.com/lab/font-events.html
 [eslint]: http://eslint.org/
 [eslint-plugin-react]: https://github.com/yannickcr/eslint-plugin-react
-[eslint-plugins]: https://github.com/search?q=eslint-plugin&ref=opensearch
+[eslint plugins]: https://github.com/search?q=eslint-plugin&ref=opensearch
 [sass]: http://sass-lang.com/
 [libsass]: http://libsass.org/
 [postcss]: https://github.com/postcss/postcss
