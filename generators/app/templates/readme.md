@@ -37,6 +37,7 @@ This project was scaffolded with [generator-wbp].
   * [jsdom] for React testing (with [TestUtils])
 <% } else { -%>
   * [WebdriverIO] as Node.js bindings for Selenium
+  * [PhantomJS] as the browser for testing with WebdriverIO, so make sure you have it installed
 <% } -%>
 
 `.babelrc` is where you can set your Babel options globally, it will be picked up by both babel-core and babelify.
@@ -117,6 +118,7 @@ This script needs to be adjusted according to your S3 data, or replace it with a
 [testutils]: https://facebook.github.io/react/docs/test-utils.html
 <% } else { -%>
 [webdriverio]: http://webdriver.io/
+[phantomjs]: http://phantomjs.org/
 <% } -%>
 [package.json]: package.json
 [aws cli]: http://aws.amazon.com/cli/
