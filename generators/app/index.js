@@ -82,7 +82,7 @@ module.exports = generators.Base.extend({
         {
           name: this.pkg.name,
           version: this.pkg.version,
-          includeReact: this.props.includeReact,
+          includeReact: this.props.includeReact
         }
       );
     },
