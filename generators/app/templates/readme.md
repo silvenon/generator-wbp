@@ -25,7 +25,7 @@ This project was scaffolded with [generator-wbp].
     - [postcss-flexbugs-fixes] for fixing some of the [flexbugs]
     - [autoprefixer] for adding vendor prefixes
     - easily include more [PostCSS plugins]
-  * JS & CSS [sourcemaps]
+  * [sourcemaps] JS & CSS
   * [Normalize.css] for normalizing styles across browsers
   * [imagemin] for image optimization
   * [SVG][svg-symbol] for icons (`<symbol>` + `<use>`) + [polyfill][svg4everybody] for IE

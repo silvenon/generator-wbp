@@ -25,7 +25,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
     - [postcss-flexbugs-fixes] for fixing some of the [flexbugs]
     - [autoprefixer] for adding vendor prefixes
     - easily include more [PostCSS plugins]
-  * JS & CSS [sourcemaps]
+  * [sourcemaps] for JS & CSS
   * [Normalize.css] for normalizing styles across browsers
   * [imagemin] for image optimization
   * [SVG][svg-symbol] for icons (`<symbol>` + `<use>`) + [polyfill][svg4everybody] for IE
