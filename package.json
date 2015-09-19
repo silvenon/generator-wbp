@@ -10,6 +10,9 @@
     "email": "matija.marohnic@gmail.com",
     "url": "https://github.com/silvenon"
   },
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "scripts": {
     "test": "mocha"
   },
