@@ -11,7 +11,7 @@ describe('general', () => {
       .on('end', done);
   });
 
-  it('creates expected files', () => {
+  it('should have expected files', () => {
     assert.file([
       'package.json',
       'gulpfile.babel.js',
@@ -32,7 +32,7 @@ describe('general', () => {
     ]);
   });
 
-  it('creates valid json files', () => {
+  it('should have valid json files', () => {
     assert(jsonlint.parse(fs.readFileSync('package.json', 'utf8')));
     assert(jsonlint.parse(fs.readFileSync('.babelrc', 'utf8')));
     assert(jsonlint.parse(fs.readFileSync('.eslintrc', 'utf8')));

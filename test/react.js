@@ -13,32 +13,36 @@ describe('react', () => {
         .on('end', done);
     });
 
-    it('adds expected dependencies', () => {
-      assert.fileContent('package.json', '"react"');
-      assert.fileContent('package.json', '"react-portal"');
-      assert.fileContent('package.json', '"react-router"');
+    it('should have expected dependencies', () => {
+      assert.fileContent([
+        ['package.json', '"react"'],
+        ['package.json', '"react-portal"'],
+        ['package.json', '"react-router"']
+      ]);
     });
 
-    it('creates expected files', () => {
-      assert.file('app/scripts/app.jsx');
-      assert.file('app/scripts/components/icon.jsx');
+    it('should have expected files', () => {
+      assert.file([
+        'app/scripts/app.jsx',
+        'app/scripts/components/icon.jsx'
+      ]);
       assert.noFile('app/scripts/app.js');
     });
 
-    it('sets the correct ESLint options', () => {
+    it('should use correct ESLint options', () => {
       assert.fileContent('.eslintrc', 'jsx');
       assert.noFileContent('.eslintrc', 'globals');
     });
 
-    it('uses correct extensions in the tasks', () => {
+    it('should use correct extensions in the tasks', () => {
       assert.fileContent('task/dev.js', '.{js,jsx}');
     });
 
-    it('adds correct HTML', () => {
+    it('should have correct HTML', () => {
       assert.fileContent('app/index.html', 'id="content"');
     });
 
-    it('adds the correct docs', () => {
+    it('should have correct docs', () => {
       assert.fileContent('readme.md', /React/i);
       assert.noFileContent('readme.md', /WebdriverIO/i);
     });
@@ -54,31 +58,33 @@ describe('react', () => {
         .on('end', done);
     });
 
-    it('adds expected dependencies', () => {
+    it('should have expected dependencies', () => {
       assert.noFileContent('package.json', 'react');
     });
 
-    it('creates expected files', () => {
+    it('should have expected files', () => {
       assert.file('app/scripts/app.js');
-      assert.noFile('app/scripts/components/icon.jsx');
-      assert.noFile('app/scripts/app.jsx');
+      assert.noFile([
+        ['app/scripts/components/icon.jsx'],
+        ['app/scripts/app.jsx']
+      ]);
     });
 
-    it('sets the correct ESLint options', () => {
+    it('should use correct ESLint options', () => {
       assert.fileContent('.eslintrc', 'globals');
       assert.noFileContent('.eslintrc', 'jsx');
     });
 
-    it('uses correct extensions in the tasks', () => {
+    it('should use correct extensions in the tasks', () => {
       assert.fileContent('task/dev.js', '.js');
       assert.noFileContent('task/dev.js', 'jsx');
     });
 
-    it('adds correct HTML', () => {
+    it('should have correct HTML', () => {
       assert.fileContent('app/index.html', 'class="container"');
     });
 
-    it('adds the correct docs', () => {
+    it('should have correct docs', () => {
       assert.noFileContent('readme.md', /React/i);
       assert.fileContent('readme.md', /WebdriverIO/i);
     });

@@ -9,7 +9,7 @@ describe('styles', () => {
       .on('end', done);
   });
 
-  it('creates expected files', () => {
+  it('should have expected files', () => {
     assert.file([
       'app/styles/vendor/_normalize.scss',
       'app/styles/_variables.scss',
