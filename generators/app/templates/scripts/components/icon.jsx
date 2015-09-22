@@ -23,7 +23,7 @@ export default React.createClass({
     /* eslint-disable no-undef */
     return (
       <svg
-        {...other} {/*  */}
+        {...other}
         className={'icon icon-' + symbol}
         dangerouslySetInnerHTML={{__html: use}}
       />
