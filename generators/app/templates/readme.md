@@ -14,6 +14,11 @@ This project was scaffolded with [generator-wbp].
   * [React] for managing views, with the following plugins:
     - [React Router] for managing routes
     - [React Portal] for handling things like modals
+<% } else { -%>
+  * templating logic for views featuring:
+    - [YAML front matter] available under `page.var`
+    - data files available under `site.data.filename.var`, similar to [Jekyll][data files] (currently supports only YAML)
+    - [Lo-Dash templating]
 <% } -%>
   * [Fetch API polyfill] wrapped as a convenience helper
   * [FontFaceObserver] for [reducing FOIT][font-events] when using webfonts
@@ -90,6 +95,10 @@ This script needs to be adjusted according to your S3 data, or replace it with a
 [react]: https://facebook.github.io/react/
 [react router]: http://rackt.github.io/react-router/
 [react portal]: https://github.com/tajo/react-portal
+<% } else { -%>
+[yaml front matter]: https://github.com/jxson/front-matter
+[data files]: http://jekyllrb.com/docs/datafiles/
+[lo-dash templating]: https://github.com/sindresorhus/gulp-template
 <% } -%>
 [fetch api polyfill]: https://github.com/github/fetch
 [fontfaceobserver]: https://github.com/bramstein/fontfaceobserver

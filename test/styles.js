@@ -16,6 +16,7 @@ describe('styles', () => {
       'app/styles/_functions.scss',
       'app/styles/_mixins.scss',
       'app/styles/_base.scss',
+      'app/styles/_demo.scss',
       'app/styles/_buttons.scss',
       'app/styles/_forms.scss',
       'app/styles/sections/_intro.scss',

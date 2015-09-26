@@ -87,10 +87,32 @@ module.exports = generators.Base.extend({
       );
     },
 
+    data: function () {
+      if (!this.props.includeReact) {
+        this.fs.copy(
+          this.templatePath('data/message.yml'),
+          this.destinationPath('data/message.yml')
+        );
+      }
+    },
+
     markup: function () {
+      var layoutPath;
+
+      if (this.props.includeReact) {
+        layoutPath = 'app/index.html';
+      } else {
+        layoutPath = 'app/layouts/default.html';
+
+        this.fs.copy(
+          this.templatePath('views/index.html'),
+          this.destinationPath('app/views/index.html')
+        );
+      }
+
       this.fs.copyTpl(
         this.templatePath('index.html'),
-        this.destinationPath('app/index.html'),
+        this.destinationPath(layoutPath),
         {
           includeReact: this.props.includeReact
         }
@@ -133,6 +155,7 @@ module.exports = generators.Base.extend({
         '_mixins.scss',
         'vendor/_normalize.scss',
         '_base.scss',
+        '_demo.scss',
         '_buttons.scss',
         '_forms.scss',
         'sections/_intro.scss',

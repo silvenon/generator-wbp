@@ -23,10 +23,6 @@ describe('loader', () => {
     it('should load the stylesheet', () => {
       assert.fileContent('app/styles/app.scss', 'vendor/loaders');
     });
-
-    it('should style the loader', () => {
-      assert.fileContent('app/index.html', '.loader');
-    });
   });
 
   describe('without react', () => {
@@ -44,10 +40,7 @@ describe('loader', () => {
         ['app/styles/vendor/_loaders.scss'],
         ['app/scripts/components/loader.jsx']
       ]);
-      assert.noFileContent([
-        ['app/styles/app.scss', 'vendor/loaders'],
-        ['app/index.html', '.loader']
-      ]);
+      assert.noFileContent('app/styles/app.scss', 'vendor/loaders');
     });
   });
 });

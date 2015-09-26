@@ -81,7 +81,7 @@ describe('react', () => {
     });
 
     it('should have correct HTML', () => {
-      assert.fileContent('app/index.html', 'class="container"');
+      assert.noFileContent('app/layouts/default.html', 'id="content"');
     });
 
     it('should have correct docs', () => {

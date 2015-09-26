@@ -15,6 +15,10 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [React] (optional) for managing views, with the following plugins:
     - [React Router] for managing routes
     - [React Portal] for handling things like modals
+  * templating logic for views (if the `React` option is off) featuring:
+    - [YAML front matter] available under `page.var`
+    - data files available under `site.data.filename.var`, similar to [Jekyll][data files] (currently supports only YAML)
+    - [Lo-Dash templating]
   * [Fetch API polyfill] wrapped as a convenience helper
   * [FontFaceObserver] for [reducing FOIT][font-events] when using webfonts
   * [ESLint] for JS & JSX linting, with the following plugins:
@@ -32,7 +36,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
   * [CSS loader] component for React
   * [Mocha] as the test framework
   * [jsdom] for React testing (with [TestUtils])
-  * [WebdriverIO] as Node.js bindings for Selenium (only if the `React` option is off)
+  * [WebdriverIO] as Node.js bindings for Selenium (if the `React` option is off)
   * [PhantomJS] as the browser for testing with WebdriverIO, so make sure you have it installed
 
 See the current [roadmap].
@@ -123,6 +127,9 @@ MIT © Matija Marohnić
 [react]: https://facebook.github.io/react/
 [react router]: http://rackt.github.io/react-router/
 [react portal]: https://github.com/tajo/react-portal
+[yaml front matter]: https://github.com/jxson/front-matter
+[data files]: http://jekyllrb.com/docs/datafiles/
+[lo-dash templating]: https://github.com/sindresorhus/gulp-template
 [fetch api polyfill]: https://github.com/github/fetch
 [fontfaceobserver]: https://github.com/bramstein/fontfaceobserver
 [font-events]: http://www.filamentgroup.com/lab/font-events.html

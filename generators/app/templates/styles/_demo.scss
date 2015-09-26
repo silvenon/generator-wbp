@@ -1,0 +1,23 @@
+.loader {
+  color: #E02D2D;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 2.5em;
+}
+
+.icon-heart {
+  display: block;
+  width: 200px;
+  height: 200px;
+  color: #E02D2D;
+}

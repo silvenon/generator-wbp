@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+<% if (includeReact) { -%>
     <title>My Web App</title>
+<% } else { -%>
+    <title><%% if (page.title) { %><%%= page.title %> | <%% } %>My Web App</title>
+<% } -%>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -25,48 +29,13 @@
         s.parentNode.insertBefore(wf, s);
       })();
     </script>
-
-    <!-- demo styles, feel free to delete -->
-    <style>
-<% if (includeReact) { -%>
-      .loader {
-        color: #E02D2D;
-      }
-<% } -%>
-
-      .container {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      h1 {
-        font-weight: 300;
-        font-size: 2.5em;
-      }
-
-      .icon-heart {
-        display: block;
-        width: 200px;
-        height: 200px;
-        color: #E02D2D;
-      }
-    </style>
   </head>
   <body>
 <% if (includeReact) { -%>
     <div id="content"></div>
 <% } else { -%>
-    <div class="container">
-      <h1>You look <strong>great</strong> today!</h1>
-      <svg class="icon icon-heart" role="presentation">
-        <use xlink:href="images/icons.svg#heart" />
-      </svg>
-    </div>
+    <%%= contents %>
 <% } -%>
-
     <script src="scripts/bundle.js"></script>
   </body>
 </html>

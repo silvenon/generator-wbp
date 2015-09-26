@@ -3,14 +3,19 @@ import loadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import flexbugs from 'postcss-flexbugs-fixes';
 import autoprefixer from 'autoprefixer';
-
-const $ = loadPlugins();
-const bs = browserSync.create();
-
 // https://github.com/gulpjs/gulp/blob/master/docs/recipes/fast-browserify-builds-with-watchify.md
 import browserify from 'browserify';
 import watchify from 'watchify';
 import source from 'vinyl-source-stream';
+<% if (!includeReact) { -%>
+import fs from 'fs';
+import path from 'path';
+import YAML from 'yamljs';
+import fm from 'front-matter';
+<% } -%>
+
+const $ = loadPlugins();
+const bs = browserSync.create();
 
 let b = browserify({
 <% if (includeReact) { -%>
@@ -57,6 +62,30 @@ gulp.task('lint', () => {
     .pipe($.eslint.failAfterError());
 });
 
+<% if (!includeReact) { -%>
+gulp.task('views', () => {
+  // à la Data Files in Jekyll
+  // http://jekyllrb.com/docs/datafiles/
+  let data = {};
+  fs.readdirSync('./data').forEach((file) => {
+    data[path.basename(file, '.yml')] = YAML.load(`data/${file}`);
+  });
+
+  return gulp.src('app/views/**/*.html')
+    .pipe($.plumber())
+    .pipe($.data({site: {data: data}}))
+    .pipe($.data((file) => {
+      let content = fm(String(file.contents));
+      file.contents = new Buffer(content.body);
+      return {page: content.attributes};
+    }))
+    .pipe($.template())
+    .pipe($.wrap({src: 'app/layouts/default.html'}))
+    .pipe(gulp.dest('.tmp'))
+    .pipe(bs.stream({once: true}));
+});
+<% } -%>
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/**/*.scss')
     .pipe($.plumber())
@@ -71,7 +100,11 @@ gulp.task('styles', () => {
     .pipe(bs.stream());
 });
 
+<% if (includeReact) { -%>
 gulp.task('connect:dev', ['scripts', 'styles'], (done) => {
+<% } else { -%>
+gulp.task('connect:dev', ['scripts', 'views', 'styles'], (done) => {
+<% } -%>
   bs.init({
     notify: false,
     port: 9000,
@@ -86,11 +119,19 @@ gulp.task('connect:dev', ['scripts', 'styles'], (done) => {
 
 gulp.task('watch:dev', ['connect:dev'], () => {
   gulp.watch([
+<% if (includeReact) { -%>
     'app/index.html',
+<% } -%>
     'app/images/**/*'
   ]).on('change', bs.reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
+<% if (!includeReact) { -%>
+  gulp.watch([
+    'app/**/*.html',
+    'data/**/*.yml'
+  ], ['views']);
+<% } -%>
 });
 
 gulp.task('serve:dev', ['connect:dev', 'watch:dev']);
