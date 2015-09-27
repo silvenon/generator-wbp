@@ -1,5 +1,5 @@
 import 'es6-promise';
-import 'fetch';
+import 'whatwg-fetch';
 
 function status(response) {
   if (response.status >= 200 && response.status < 300) {

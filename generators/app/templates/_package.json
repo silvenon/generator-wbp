@@ -15,9 +15,6 @@
     "preview": "gulp serve:dist",
     "deploy": "aws --profile myprofile s3 sync dist s3://mybucket --region myregion --delete"
   },
-  "browser": {
-    "fetch": "whatwg-fetch"
-  },
   "browserify": {
     "transform": [
       "babelify",
