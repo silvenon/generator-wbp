@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import loadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import flexbugs from 'postcss-flexbugs-fixes';
-import autoprefixer from 'autoprefixer-core';
+import autoprefixer from 'autoprefixer';
 
 const $ = loadPlugins();
 const bs = browserSync.create();
