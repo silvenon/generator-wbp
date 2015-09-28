@@ -168,7 +168,6 @@ module.exports = generators.Base.extend({
         files = [
           'test/mocha.opts',
           'test/helpers/common.js',
-          'test/vendor/classList.js',
           'test/spec/document.js',
           'test/spec/test.jsx'
         ];

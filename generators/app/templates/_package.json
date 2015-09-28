@@ -54,7 +54,7 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.5",
 <% if (includeReact) { -%>
-    "jsdom": "^3.1.2",
+    "jsdom": "^6.5.1",
 <% } else { -%>
     "gulp-webdriver": "^1.0.1",
 <% } -%>

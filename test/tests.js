@@ -26,7 +26,6 @@ describe('tests', () => {
 
     it('should have expected files', () => {
       assert.file([
-        'test/vendor/classList.js',
         'test/spec/document.js',
         'test/spec/test.jsx',
         'test/helpers/common.js'
