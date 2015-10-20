@@ -45,7 +45,7 @@ This project was scaffolded with [generator-wbp].
   * [PhantomJS] as the browser for testing with WebdriverIO, so make sure you have it installed
 <% } -%>
 
-`.babelrc` is where you can set your Babel options globally, it will be picked up by both babel-core and babelify.
+`.babelrc` is where you can set your Babel options globally, it will be picked up by both babel and babelify.
 
 ## Usage
 

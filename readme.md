@@ -41,7 +41,7 @@ Heavily inspired by [generator-gulp-webapp], but far more opinionated. I want to
 
 See the current [roadmap].
 
-`.babelrc` is where you can set your Babel options globally, it will be picked up by both babel-core and babelify.
+`.babelrc` is where you can set your Babel options globally, it will be picked up by both babel and babelify.
 
 ## Getting Started
 
