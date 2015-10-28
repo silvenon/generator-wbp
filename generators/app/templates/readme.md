@@ -120,7 +120,9 @@ This script needs to be adjusted according to your S3 data, or replace it with a
 [imagemin]: https://github.com/imagemin/imagemin
 [svg-symbol]: https://css-tricks.com/svg-symbol-good-choice-icons/
 [svg4everybody]: https://github.com/jonathantneal/svg4everybody
+<% if (includeReact) { -%>
 [css loader]: http://connoratherton.com/loaders
+<% } -%>
 [mocha]: http://mochajs.org/
 [jsdom]: https://github.com/tmpvar/jsdom
 <% if (includeReact) { -%>
