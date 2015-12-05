@@ -10,9 +10,20 @@
     "email": "matija.marohnic@gmail.com",
     "url": "https://github.com/silvenon"
   },
-  "engines": {
-    "node": ">=0.10.0"
+  "contributors": [
+    {
+      "name": "Dino Trojak",
+      "email": "dinotrojak@gmail.com",
+      "url": "https://twitter.com/dinodsaurus"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/silvenon/issues"
   },
+  "engines": {
+    "node": ">=4"
+  },
+  "preferGlobal": true,
   "scripts": {
     "test": "mocha"
   },
@@ -24,25 +35,29 @@
     "webapp",
     "modern",
     "frontend",
-    "gulp",
+    "webpack",
+    "react",
+    "babel",
+    "es2015",
     "sass",
     "postcss",
-    "modernizr",
-    "browserify",
     "webdriver",
+    "wdio",
     "selenium"
   ],
+  "peerDependencies": {
+    "yo": "^1.5.0"
+  },
   "dependencies": {
     "chalk": "^1.0.0",
     "yeoman-generator": "^0.20.1",
     "yosay": "^1.0.4"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
-    "eslint": "^1.7.2",
+    "babel-core": "^6.3.13",
+    "eslint": "^1.10.3",
     "jsonlint": "^1.6.2",
-    "mocha": "*",
-    "shelljs": "^0.5.1",
-    "yeoman-assert": "^2.0.0"
+    "mocha": "^2.3.4",
+    "yeoman-assert": "^2.1.0"
   }
 }
