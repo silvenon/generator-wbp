@@ -60,6 +60,7 @@
     "babel-core": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^2.0.0",
+    "eslint-plugin-react": "^3.11.2",
     "jsonlint": "^1.6.2",
     "mocha": "^2.3.4",
     "pre-commit": "^1.1.2",

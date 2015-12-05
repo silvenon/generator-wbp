@@ -1,8 +1,8 @@
 {
   "root": true,
   "extends": [
-    "eslint:recommended",
-    "airbnb"
+    "airbnb",
+    "eslint:recommended"
   ],
   "env": {
     "node": true,
