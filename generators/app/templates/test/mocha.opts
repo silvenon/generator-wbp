@@ -1,4 +1,0 @@
---recursive
---compilers js:babel/register,jsx:babel/register
---require ./test/helpers/common.js
---slow 300
