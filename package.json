@@ -25,8 +25,11 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "test": "mocha"
+    "test": "eslint ."
   },
+  "pre-commit": [
+    "test"
+  ],
   "files": [
     "generators"
   ],
@@ -59,6 +62,7 @@
     "eslint-config-airbnb": "^2.0.0",
     "jsonlint": "^1.6.2",
     "mocha": "^2.3.4",
+    "pre-commit": "^1.1.2",
     "yeoman-assert": "^2.1.0"
   }
 }
