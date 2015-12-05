@@ -25,7 +25,7 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "test": "eslint . && mocha"
+    "test": "eslint ."
   },
   "pre-commit": [
     "test"

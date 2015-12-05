@@ -36,6 +36,15 @@ module.exports = generator.Base.extend({
           this.destinationPath(file)
         );
       });
+    },
+    npm() {
+      this.fs.copyTpl(
+        this.templatePath('_package.json'),
+        this.destinationPath('package.json'),
+        {
+          includeReact: this.props.includeReact
+        }
+      );
     }
   },
 
