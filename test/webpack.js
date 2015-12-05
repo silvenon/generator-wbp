@@ -1,7 +1,6 @@
 import path from 'path';
 import { test as helpers } from 'yeoman-generator';
 import assert from 'yeoman-assert';
-// import reactPackage from './reactPackage';
 
 describe('webpack', () => {
   before((done) => {
@@ -19,13 +18,5 @@ describe('webpack', () => {
       'cfg/test.js',
       'server.js'
     ]);
-  });
-
-  it('generates package.json', () => {
-    assert.file('package.json');
-  });
-
-  it('checks content of package.json', () => {
-    assert.JSONFileContent('package.json', {'react': '^0.14.3'});
   });
 });

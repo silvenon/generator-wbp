@@ -29,15 +29,14 @@
     "minimist": "^1.2.0",
     "rimraf": "^2.4.3",
     "webpack": "^1.12.0",
-    "webpack-dev-server": "^1.12.0"
-    <% if (!includeReact) { -%>
+    "webpack-dev-server": "^1.12.0"<% if (includeReact) { -%>,
     "babel-preset-react": "^6.0.15",
     "eslint-plugin-react": "^3.3.0",
     "react-hot-loader": "^1.2.9"
     <% } -%>
   },
   "dependencies": {
-    <% if (!includeReact) { -%>
+    <% if (includeReact) { -%>
     "react": "^0.14.3",
     "react-addons-test-utils": "^0.14.3",
     "react-dom": "^0.14.3"
