@@ -48,9 +48,6 @@
     "wdio",
     "selenium"
   ],
-  "peerDependencies": {
-    "yo": "^1.5.0"
-  },
   "dependencies": {
     "chalk": "^1.0.0",
     "yeoman-generator": "^0.20.1",
