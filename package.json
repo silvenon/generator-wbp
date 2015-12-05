@@ -25,7 +25,10 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint . && mocha",
+    "clean": "rimraf generators",
+    "compile": "cp -r src generators && babel src --out-dir generators --ignore src/app/templates",
+    "prepublish": "npm run clean && npm run compile"
   },
   "pre-commit": [
     "test"
@@ -54,6 +57,7 @@
     "yosay": "^1.0.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.3.13",
     "babel-core": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
     "eslint": "^1.10.3",
@@ -62,6 +66,7 @@
     "jsonlint": "^1.6.2",
     "mocha": "^2.3.4",
     "pre-commit": "^1.1.2",
+    "rimraf": "^2.4.4",
     "yeoman-assert": "^2.1.0"
   }
 }

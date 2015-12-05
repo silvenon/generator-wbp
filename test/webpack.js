@@ -5,8 +5,8 @@ import assert from 'yeoman-assert';
 
 describe('webpack', () => {
   before((done) => {
-    helpers.run(path.join(__dirname, '../generators/app'))
-      .withOptions({ skipInstall: true, includeReact:true })
+    helpers.run(path.join(__dirname, '../src/app'))
+      .withOptions({ skipInstall: true, includeReact: true })
       .on('end', done);
   });
 
