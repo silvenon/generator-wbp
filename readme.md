@@ -1,3 +1,7 @@
+## Deprecated!
+
+This generator was a way for me to start React projects more quickly. However, I since started using the awesome [create-react-app], so I won't be maintaining this project anymore. I suggest you check it out!
+
 # generator-wbp [![Travis CI](https://travis-ci.org/silvenon/generator-wbp.svg)](https://travis-ci.org/silvenon/generator-wbp)
 
 > A [Yeoman] generator which provides a modern workflow for developing web apps and sites.
@@ -115,6 +119,8 @@ See the [contributing docs](contributing.md), interesting stuff.
 
 MIT © Matija Marohnić
 
+[create-react-app]: https://github.com/facebookincubator/create-react-app
+[webpack]: http://webpack.github.io/
 [yeoman]: http://yeoman.io/
 [generator-gulp-webapp]: https://github.com/yeoman/generator-gulp-webapp
 [gulp]: http://gulpjs.com/
