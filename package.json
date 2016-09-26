@@ -1,6 +1,6 @@
 {
   "name": "generator-wbp",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Scaffolds a modern workflow for starting a React app",
   "license": "MIT",
   "main": "generators/app/index.js",
