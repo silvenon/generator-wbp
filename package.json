@@ -22,15 +22,12 @@
   "keywords": [
     "yeoman-generator",
     "webapp",
-    "modern",
     "frontend",
-    "gulp",
-    "sass",
-    "postcss",
-    "modernizr",
-    "browserify",
-    "webdriver",
-    "selenium"
+    "react",
+    "redux",
+    "normalizr",
+    "css-modules",
+    "postcss"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
