@@ -1,8 +1,8 @@
-## Deprecated!
-
-This generator was a way for me to start React projects more quickly. However, I since started using the awesome [create-react-app], so I won't be maintaining this project anymore. I suggest you check it out!
-
 # generator-wbp [![Travis CI](https://travis-ci.org/silvenon/generator-wbp.svg)](https://travis-ci.org/silvenon/generator-wbp) [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+**Deprecated**: this generator was a way for me to start React projects more quickly. However, I since started using the awesome [create-react-app], so I won't be maintaining this project anymore. I suggest you check it out!
+
+---
 
 > A [Yeoman] generator which provides a modern workflow for developing web apps and sites.
 
