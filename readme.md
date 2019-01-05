@@ -1,4 +1,4 @@
-# generator-wbp ![not maintained](https://img.shields.io/badge/maintained-no-red.svg) [![Travis CI](https://travis-ci.org/silvenon/generator-wbp.svg)](https://travis-ci.org/silvenon/generator-wbp)
+# generator-wbp ![not maintained](https://img.shields.io/badge/maintained-no-lightgrey.svg) [![Travis CI](https://travis-ci.org/silvenon/generator-wbp.svg)](https://travis-ci.org/silvenon/generator-wbp)
 
 **Deprecated**: this generator was a way for me to start React projects more quickly. However, I since started using the awesome [create-react-app], so I won't be maintaining this project anymore. I suggest you check it out!
 
